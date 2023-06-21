@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Favicon -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>cambioml.com</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <h1 class="logo-h1">CAMBIO<span class="highlight-logo">ML</span></h1>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="mailto:founders@cambioml.com">Contact</a>
+      </nav>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </header>
+    <div id="mobius" style="padding-bottom: 7.5%">
+      <div id="p5Sketch"></div>
+    </div>
+
+    <section class="hero">
+      <h2 class="hero-header">
+        Manufacturing <span class="highlight">transformed</span> for the
+        <br id="hero-break" />
+        needs of today
+      </h2>
+      <p class="hero-subheader">
+        Using science and AI to transform the future of manufacturing.
+      </p>
+      <button class="hero-button">
+        <a href="mailto:founders@cambioml.com">Request A Demo</a>
+      </button>
+    </section>
+
+    <section class="video-container">
+      <video class="player" controls autoplay muted loop>
+        <source
+          src="videos/demo1.mp4"
+          type='video/mp4; codecs="avc1.4d002a, mp4a.40.2"'
+        />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+    <section id="product" class="hero">
+      <h2 class="hero-header">
+        Augment, <span class="highlight">Automate</span>, Understand
+      </h2>
+      <p class="hero-subheader">
+        Designing remarkable products is hard and time consuming.
+        <br />
+        Our canvas uses AI to boost your team's creativity from the earliest
+        stage of ideation.
+      </p>
+    </section>
+    <div class="dual-container">
+      <div class="left">
+        <h1 class="left-header">Augment</h1>
+        <h1 class="left-subheader">FabDesign</h1>
+        <p class="left-text">
+          Seamlessly generate optimized designs, efficient processes, and
+          advanced simulations via simple prompts. Revolutionize your
+          manufacturing workflow and unlock limitless potential with Production
+          Prodigy's intuitive AI-driven capabilities
+        </p>
+      </div>
+      <video class="right-video" controls autoplay muted loop>
+        <source
+          src="videos/demo1.mp4"
+          type='video/mp4; codecs="avc1.4d002a, mp4a.40.2"'
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="dual-container">
+      <div class="left">
+        <h1 class="left-header">Automate</h1>
+        <h1 class="left-subheader">FabSearch</h1>
+        <p class="left-text">
+          Records any file you've seen, said, or heard and makes it searchable.
+          For your privacy, we store all of the recordings locally on your Mac
+        </p>
+      </div>
+      <video class="right-video" controls autoplay muted loop>
+        <source
+          src="videos/demo-chat.mp4"
+          type='video/mp4; codecs="avc1.4d002a, mp4a.40.2"'
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="dual-container">
+      <div class="left">
+        <h1 class="left-header">Understand</h1>
+        <h1 class="left-subheader">FabAnalytics</h1>
+        <p class="left-text">
+          Say goodbye to data silos and unlock actionable insights for optimized
+          operations and enhanced decision-making. Streamline your data flow and
+          revolutionize your manufacturing processes with FabAnalytics today.
+        </p>
+      </div>
+      <video class="right-video" controls autoplay muted loop>
+        <source
+          src="videos/demo-scatter.mp4"
+          type='video/mp4; codecs="avc1.4d002a, mp4a.40.2"'
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div id="quality">
+      <h1 class="final-action-header">Meets The Highest Industry Standards</h1>
+      <div class="three">
+        <div class="standard">
+          <h2 class="quality-title">Soc 2 Type II Certified</h2>
+          <p class="quality-p">
+            The most comprehensive certification that our system is designed to
+            keep our customers’ sensitive data secure.
+          </p>
+        </div>
+        <div class="standard">
+          <h2 class="quality-title">Secure encryption of data</h2>
+          <p class="quality-p">
+            All customer data is encrypted at rest with FIP 140-2 validated
+            crypto module utilizing AES 256 bit encryption. All data in transit
+            is encrypted using TLS 1.2+.
+          </p>
+        </div>
+        <div class="standard">
+          <h2 class="quality-title">GDPR compliant</h2>
+          <p class="quality-p">
+            Customers’ personal information is maintained and secured in
+            accordance with the EU's General Data Protection Regulation (GDPR).
+          </p>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br />
+    <div id="final-action">
+      <h1 class="final-action-header">Don't wait for the future</h1>
+      <p class="final-action-text">Get started today.</p>
+      <button class="hero-button">
+        <a href="mailto:founders@cambioml.com">Request A Demo</a>
+      </button>
+    </div>
+
+    <br /><br /><br />
+    <br /><br /><br />
+
+    <!-- <script src="sketch.js"></script> -->
+  </body>
+</html>

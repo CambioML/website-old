@@ -27,8 +27,6 @@ and compare different models to each other.
    rlhf
    data_labeling_annotation
    knowledge_retrieval
-   analytics
-   embedding
 
 .. toctree::
    :maxdepth: 4

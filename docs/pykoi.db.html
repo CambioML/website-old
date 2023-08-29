@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="pykoi.llm package" href="pykoi.llm.html" /><link rel="prev" title="pykoi.component package" href="pykoi.component.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>pykoi.db package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
     
 
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --background: #333;
+  --textColor: #DDD;
+  --color-admonition-title-background--note: #00ebc7;
+  --color-admonition-title--note: #a2fff1;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --background: #333;
+  --textColor: #DDD;
+  --color-admonition-title-background--note: #00ebc7;
+  --color-admonition-title--note: #a2fff1;
   
       }
     }
@@ -149,7 +157,8 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/logo.svg" alt="Logo"/>
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
   </div>
   
   
@@ -161,14 +170,14 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tour.html">Quick Tour</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Features</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="data_collection_feedback.html">Collecting User Feedback via a Chat Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_collection_feedback.html">Chat UI &amp; Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_comparison.html">Comparing Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlhf.html">RLHF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
@@ -225,16 +234,16 @@
         </div>
         <article role="main">
           <section id="pykoi-db-package">
-<h1>pykoi.db package<a class="headerlink" href="#pykoi-db-package" title="Permalink to this heading">#</a></h1>
+<h1>pykoi.db package<a class="headerlink" href="#pykoi-db-package" title="Permalink to this headline">#</a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="module-pykoi.db.qa_database">
-<span id="pykoi-db-qa-database-module"></span><h2>pykoi.db.qa_database module<a class="headerlink" href="#module-pykoi.db.qa_database" title="Permalink to this heading">#</a></h2>
+<span id="pykoi-db-qa-database-module"></span><h2>pykoi.db.qa_database module<a class="headerlink" href="#module-pykoi.db.qa_database" title="Permalink to this headline">#</a></h2>
 <p>Question answer database module</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.db.qa_database.QuestionAnswerDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.db.qa_database.</span></span><span class="sig-name descname"><span class="pre">QuestionAnswerDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/qd.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.db.qa_database.</span></span><span class="sig-name descname"><span class="pre">QuestionAnswerDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/qd.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Question Answer Database class</p>
 <dl class="py method">
@@ -270,16 +279,16 @@ vote_status is a text field that can only have the values ‘up’, ‘down’, 
 The vote_status field is set to ‘n/a’ by default.
 Returns the ID of the newly inserted row.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>question</strong> (<em>str</em>) – The question to insert.</p></li>
 <li><p><strong>answer</strong> (<em>str</em>) – The answer to insert.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The ID of the newly inserted row.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -290,7 +299,7 @@ Returns the ID of the newly inserted row.</p>
 <span class="sig-name descname"><span class="pre">print_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase.print_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase.print_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Prints the contents of the table in a formatted manner.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>rows</strong> (<em>list</em>) – A list of tuples where each tuple represents a row in the table.
 Each tuple contains five elements: ID, Question, Answer, Timestamp, and Vote Status.</p>
 </dd>
@@ -302,10 +311,10 @@ Each tuple contains five elements: ID, Question, Answer, Timestamp, and Vote Sta
 <span class="sig-name descname"><span class="pre">retrieve_all_question_answers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase.retrieve_all_question_answers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase.retrieve_all_question_answers" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieves all question-answer pairs from the database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A list of tuples representing the question-answer pairs.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>list</p>
 </dd>
 </dl>
@@ -316,10 +325,10 @@ Each tuple contains five elements: ID, Question, Answer, Timestamp, and Vote Sta
 <span class="sig-name descname"><span class="pre">retrieve_all_question_answers_as_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase.retrieve_all_question_answers_as_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase.retrieve_all_question_answers_as_pandas" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieves all question-answer pairs from the database as a pandas dataframe.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A pandas dataframe.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>DataFrame</p>
 </dd>
 </dl>
@@ -330,7 +339,7 @@ Each tuple contains five elements: ID, Question, Answer, Timestamp, and Vote Sta
 <span class="sig-name descname"><span class="pre">save_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'question_answer_votes.csv'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase.save_to_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase.save_to_csv" title="Permalink to this definition">#</a></dt>
 <dd><p>This method saves the contents of the question_answer table into a CSV file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>csv_file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the CSV file to which the data will be written.</p></li>
 <li><p><strong>&quot;question_answer_votes.csv&quot;.</strong> (<em>Defaults to</em>) – </p></li>
@@ -348,13 +357,13 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
 <span class="sig-name descname"><span class="pre">update_vote_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vote_status</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/qa_database.html#QuestionAnswerDatabase.update_vote_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.qa_database.QuestionAnswerDatabase.update_vote_status" title="Permalink to this definition">#</a></dt>
 <dd><p>Updates the vote status of a question-answer pair with the given ID.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>id</strong> (<em>int</em>) – The ID of the question-answer pair to update.</p></li>
 <li><p><strong>vote_status</strong> (<em>str</em>) – The new vote status to set. Must be one of ‘up’, ‘down’, or ‘n/a’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If the question with the given ID does not exist.</p>
 </dd>
 </dl>
@@ -364,11 +373,11 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
 
 </section>
 <section id="module-pykoi.db.ranking_database">
-<span id="pykoi-db-ranking-database-module"></span><h2>pykoi.db.ranking_database module<a class="headerlink" href="#module-pykoi.db.ranking_database" title="Permalink to this heading">#</a></h2>
+<span id="pykoi-db-ranking-database-module"></span><h2>pykoi.db.ranking_database module<a class="headerlink" href="#module-pykoi.db.ranking_database" title="Permalink to this headline">#</a></h2>
 <p>This file contains the RankingDatabase class which is used to store and retrieve</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.db.ranking_database.RankingDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.db.ranking_database.</span></span><span class="sig-name descname"><span class="pre">RankingDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/ranking.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.db.ranking_database.</span></span><span class="sig-name descname"><span class="pre">RankingDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/ranking.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Ranking Database class</p>
 <dl class="py method">
@@ -402,17 +411,17 @@ The table has four columns: id (primary key), question, up_ranking_answer, and l
 <dd><p>Inserts a new ranking entry into the database with the given question, up_ranking_answer,
 and low_ranking_answer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>question</strong> (<em>str</em>) – The question of the ranking entry.</p></li>
 <li><p><strong>up_ranking_answer</strong> (<em>str</em>) – The higher ranked answer of the ranking entry.</p></li>
 <li><p><strong>low_ranking_answer</strong> (<em>str</em>) – The lower ranked answer of the ranking entry.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The ID of the newly inserted row.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -423,7 +432,7 @@ and low_ranking_answer.</p>
 <span class="sig-name descname"><span class="pre">print_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase.print_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase.print_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Prints the contents of the table in a formatted manner.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>rows</strong> (<em>list</em>) – A list of tuples where each tuple represents a row in the table.
 Each tuple contains four elements: ID, Question, Up_Ranking_Answer, Low_Ranking_Answer.</p>
 </dd>
@@ -435,25 +444,11 @@ Each tuple contains four elements: ID, Question, Up_Ranking_Answer, Low_Ranking_
 <span class="sig-name descname"><span class="pre">retrieve_all_question_answers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase.retrieve_all_question_answers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieves all question-answer pairs from the database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A list of tuples representing the question-answer pairs.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers_as_pandas">
-<span class="sig-name descname"><span class="pre">retrieve_all_question_answers_as_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase.retrieve_all_question_answers_as_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers_as_pandas" title="Permalink to this definition">#</a></dt>
-<dd><p>Retrieves pairs from the database as a pandas dataframe.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A pandas dataframe.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -463,7 +458,7 @@ Each tuple contains four elements: ID, Question, Up_Ranking_Answer, Low_Ranking_
 <span class="sig-name descname"><span class="pre">save_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ranking_data.csv'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/db/ranking_database.html#RankingDatabase.save_to_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.db.ranking_database.RankingDatabase.save_to_csv" title="Permalink to this definition">#</a></dt>
 <dd><p>Saves the contents of the ranking table into a CSV file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>csv_file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the CSV file to which the data will be written.</p></li>
 <li><p><strong>&quot;ranking_data.csv&quot;.</strong> (<em>Defaults to</em>) – </p></li>
@@ -480,7 +475,7 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
 
 </section>
 <section id="module-pykoi.db">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pykoi.db" title="Permalink to this heading">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pykoi.db" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -558,37 +553,8 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
             <ul>
 <li><a class="reference internal" href="#">pykoi.db package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-pykoi.db.qa_database">pykoi.db.qa_database module</a><ul>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase</span></code></a><ul>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.close_connection"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.close_connection()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.create_table"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.create_table()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.get_connection"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.get_connection()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.get_cursor"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.get_cursor()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.insert_question_answer"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.insert_question_answer()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.print_table"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.print_table()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.retrieve_all_question_answers"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.retrieve_all_question_answers()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.retrieve_all_question_answers_as_pandas"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.retrieve_all_question_answers_as_pandas()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.save_to_csv"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.save_to_csv()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.qa_database.QuestionAnswerDatabase.update_vote_status"><code class="docutils literal notranslate"><span class="pre">QuestionAnswerDatabase.update_vote_status()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-pykoi.db.ranking_database">pykoi.db.ranking_database module</a><ul>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase"><code class="docutils literal notranslate"><span class="pre">RankingDatabase</span></code></a><ul>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.close_connection"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.close_connection()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.create_table"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.create_table()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.get_connection"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.get_connection()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.get_cursor"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.get_cursor()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.insert_ranking"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.insert_ranking()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.print_table"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.print_table()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.retrieve_all_question_answers()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers_as_pandas"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.retrieve_all_question_answers_as_pandas()</span></code></a></li>
-<li><a class="reference internal" href="#pykoi.db.ranking_database.RankingDatabase.save_to_csv"><code class="docutils literal notranslate"><span class="pre">RankingDatabase.save_to_csv()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-pykoi.db.qa_database">pykoi.db.qa_database module</a></li>
+<li><a class="reference internal" href="#module-pykoi.db.ranking_database">pykoi.db.ranking_database module</a></li>
 <li><a class="reference internal" href="#module-pykoi.db">Module contents</a></li>
 </ul>
 </li>
@@ -601,9 +567,10 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=525cde36"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
     </body>
 </html>

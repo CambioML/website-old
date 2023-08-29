@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="pykoi" href="modules.html" /><link rel="prev" title="Data Labeling &amp; Annotation" href="data_labeling_annotation.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Observability" href="analytics.html" /><link rel="prev" title="Data Labeling &amp; Annotation" href="data_labeling_annotation.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Finetuning &amp; Knowledge Retrieval - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul>
@@ -290,12 +304,12 @@ interact with the new model in another:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="modules.html">
+          <a class="next-page" href="analytics.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">pykoi</div>
+                <div class="title">Observability</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

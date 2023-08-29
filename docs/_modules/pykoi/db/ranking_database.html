@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>pykoi.db.ranking_database - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=362ab14a" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4a2a2a4c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
     
     
 
@@ -145,7 +145,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
@@ -160,14 +160,14 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tour.html">Quick Tour</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Features</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_collection_feedback.html">Collecting User Feedback via a Chat Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_collection_feedback.html">Chat UI &amp; Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../model_comparison.html">Comparing Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../rlhf.html">Reinforcement Learning with Human Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rlhf.html">RLHF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../analytics.html">Observability</a></li>
@@ -228,8 +228,6 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">threading</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">pykoi.db.constants</span> <span class="kn">import</span> <span class="n">RANKING_CSV_HEADER</span>
 
@@ -311,9 +309,7 @@
 <span class="s2">        &quot;&quot;&quot;</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
             <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cursor</span><span class="p">()</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-                <span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">up_ranking_answer</span><span class="p">,</span> <span class="n">low_ranking_answer</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">up_ranking_answer</span><span class="p">,</span> <span class="n">low_ranking_answer</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_connection</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
@@ -383,19 +379,7 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
             <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
             <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">RANKING_CSV_HEADER</span><span class="p">)</span>
-            <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">ranking_data</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="RankingDatabase.retrieve_all_question_answers_as_pandas"><a class="viewcode-back" href="../../../pykoi.db.html#pykoi.db.ranking_database.RankingDatabase.retrieve_all_question_answers_as_pandas">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_all_question_answers_as_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Retrieves pairs from the database as a pandas dataframe.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            DataFrame: A pandas dataframe.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_all_question_answers</span><span class="p">()</span>
-        <span class="n">rows_to_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-        <span class="n">rows_to_pd</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">RANKING_CSV_HEADER</span>
-        <span class="k">return</span> <span class="n">rows_to_pd</span></div></div>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">ranking_data</span><span class="p">)</span></div></div>
 </pre></div>
         </article>
       </div>
@@ -445,9 +429,10 @@
       
     </aside>
   </div>
-</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=525cde36"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
     </body>
 </html>

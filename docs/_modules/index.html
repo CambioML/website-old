@@ -6,7 +6,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Overview: module code - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=4a2a2a4c" />
@@ -26,12 +26,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -147,6 +155,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
@@ -167,6 +179,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul>
@@ -232,7 +246,8 @@
         </div>
         <article role="main">
           <h1>All modules for which code is available</h1>
-<ul><li><a href="pykoi/chat/db/abs_database.html">pykoi.chat.db.abs_database</a></li>
+<ul><li><a href="pykoi/application.html">pykoi.application</a></li>
+<li><a href="pykoi/chat/db/abs_database.html">pykoi.chat.db.abs_database</a></li>
 <li><a href="pykoi/chat/db/comparator_database.html">pykoi.chat.db.comparator_database</a></li>
 <li><a href="pykoi/chat/db/qa_database.html">pykoi.chat.db.qa_database</a></li>
 <li><a href="pykoi/chat/db/ranking_database.html">pykoi.chat.db.ranking_database</a></li>
@@ -246,7 +261,10 @@
 <li><a href="pykoi/component/base.html">pykoi.component.base</a></li>
 <li><a href="pykoi/component/chatbot_database_factory.html">pykoi.component.chatbot_database_factory</a></li>
 <li><a href="pykoi/component/constants.html">pykoi.component.constants</a></li>
+<li><a href="pykoi/interactives/barchart.html">pykoi.interactives.barchart</a></li>
+<li><a href="pykoi/state.html">pykoi.state</a></li>
 <li><a href="pykoi/telemetry/events.html">pykoi.telemetry.events</a></li>
+<li><a href="pykoi/telemetry/telemetry.html">pykoi.telemetry.telemetry</a></li>
 <li><a href="tests/chat/db/test_qa_database.html">tests.chat.db.test_qa_database</a></li>
 <li><a href="tests/chat/db/test_ranking_database.html">tests.chat.db.test_ranking_database</a></li>
 <li><a href="tests/chat/llm/test_abs_llm.html">tests.chat.llm.test_abs_llm</a></li>
@@ -254,6 +272,8 @@
 <li><a href="tests/chat/llm/test_huggingface.html">tests.chat.llm.test_huggingface</a></li>
 <li><a href="tests/chat/llm/test_openai.html">tests.chat.llm.test_openai</a></li>
 <li><a href="tests/component/test_base.html">tests.component.test_base</a></li>
+<li><a href="tests/test_application.html">tests.test_application</a></li>
+<li><a href="tests/test_state.html">tests.test_state</a></li>
 </ul>
         </article>
       </div>

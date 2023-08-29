@@ -6,7 +6,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>pykoi.chat.llm.huggingface - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=4a2a2a4c" />
@@ -26,12 +26,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,7 +156,8 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../../../../_static/logo.svg" alt="Logo"/>
+    <img class="sidebar-logo only-light" src="../../../../_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../../_static/logo-dark-mode.svg" alt="Dark Logo"/>
   </div>
   
   
@@ -271,21 +280,22 @@
 <span class="sd">            max_length (int): The maximum length for the model. Default is 100.</span>
 <span class="sd">            device_map (str): The device map for the model. Default is &quot;auto&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># running on cpu can be slow!!!</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[HuggingfaceModel] loading model...&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-            <span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-            <span class="n">trust_remote_code</span><span class="o">=</span><span class="n">trust_remote_code</span><span class="p">,</span>
-            <span class="n">load_in_8bit</span><span class="o">=</span><span class="n">load_in_8bit</span><span class="p">,</span>
-            <span class="n">device_map</span><span class="o">=</span><span class="n">device_map</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[HuggingfaceModel] loading tokenizer...&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-            <span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-            <span class="n">trust_remote_code</span><span class="o">=</span><span class="n">trust_remote_code</span><span class="p">,</span>
-            <span class="n">load_in_8bit</span><span class="o">=</span><span class="n">load_in_8bit</span><span class="p">,</span>
-            <span class="n">device_map</span><span class="o">=</span><span class="n">device_map</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">pretrained_model_name_or_path</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="c1"># running on cpu can be slow!!!</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[HuggingfaceModel] loading model...&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+                <span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
+                <span class="n">trust_remote_code</span><span class="o">=</span><span class="n">trust_remote_code</span><span class="p">,</span>
+                <span class="n">load_in_8bit</span><span class="o">=</span><span class="n">load_in_8bit</span><span class="p">,</span>
+                <span class="n">device_map</span><span class="o">=</span><span class="n">device_map</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[HuggingfaceModel] loading tokenizer...&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+                <span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
+                <span class="n">trust_remote_code</span><span class="o">=</span><span class="n">trust_remote_code</span><span class="p">,</span>
+                <span class="n">load_in_8bit</span><span class="o">=</span><span class="n">load_in_8bit</span><span class="p">,</span>
+                <span class="n">device_map</span><span class="o">=</span><span class="n">device_map</span><span class="p">,</span>
+            <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span> <span class="o">=</span> <span class="n">max_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pretrained_model_name_or_path</span> <span class="o">=</span> <span class="n">pretrained_model_name_or_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
@@ -345,11 +355,36 @@
             <span class="p">]</span>
 
             <span class="n">response</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span> 
-                <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">response</span> <span class="k">if</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">resp</span>
+                <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span> <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">response</span> <span class="k">if</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">resp</span>
             <span class="p">]</span>
 
-        <span class="k">return</span> <span class="n">response</span></div></div>
+        <span class="k">return</span> <span class="n">response</span></div>
+
+<div class="viewcode-block" id="HuggingfaceModel.create"><a class="viewcode-back" href="../../../../pykoi.chat.llm.html#pykoi.chat.llm.huggingface.HuggingfaceModel.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the Huggingface model with given model and tokenizer.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: Pre-loaded model instance from Huggingface.</span>
+<span class="sd">            tokenizer: Pre-loaded tokenizer instance from Huggingface.</span>
+<span class="sd">            name (str): The name of the model</span>
+<span class="sd">            max_length (int): The maximum length for the model. Default is 100.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            An instance of HuggingfaceModel.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1"># This won&#39;t be used since we are directly assigning the model &amp; tokenizer</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Setting defaults, but these won&#39;t be used</span>
+            <span class="n">load_in_8bit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span>
+            <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">_tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span>
+        <span class="k">return</span> <span class="n">instance</span></div></div>
 </pre></div>
         </article>
       </div>

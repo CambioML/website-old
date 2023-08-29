@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>pykoi.chat.db package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
@@ -322,7 +336,7 @@
 <p>Comparator Database</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.chat.db.comparator_database.ComparatorDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.comparator_database.</span></span><span class="sig-name descname"><span class="pre">ComparatorDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/comparator.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/comparator_database.html#ComparatorDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.comparator_database.ComparatorDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.comparator_database.</span></span><span class="sig-name descname"><span class="pre">ComparatorDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/comparator.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/comparator_database.html#ComparatorDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.comparator_database.ComparatorDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pykoi.chat.db.abs_database.AbsDatabase" title="pykoi.chat.db.abs_database.AbsDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbsDatabase</span></code></a></p>
 <p>ComparatorDatabase class.</p>
 <dl class="py method">
@@ -377,7 +391,7 @@ Each tuple contains five elements: ID, Model, QID, Rank, Answer, Timestamp.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.chat.db.comparator_database.ComparatorQuestionDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.comparator_database.</span></span><span class="sig-name descname"><span class="pre">ComparatorQuestionDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/comparator.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/comparator_database.html#ComparatorQuestionDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.comparator_database.ComparatorQuestionDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.comparator_database.</span></span><span class="sig-name descname"><span class="pre">ComparatorQuestionDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/comparator.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/comparator_database.html#ComparatorQuestionDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.comparator_database.ComparatorQuestionDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pykoi.chat.db.abs_database.AbsDatabase" title="pykoi.chat.db.abs_database.AbsDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbsDatabase</span></code></a></p>
 <p>Comparator Question Database class</p>
 <dl class="py method">
@@ -441,7 +455,7 @@ Each tuple contains five elements: ID, Question.</p>
 <p>Question answer database module</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.chat.db.qa_database.QuestionAnswerDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.qa_database.</span></span><span class="sig-name descname"><span class="pre">QuestionAnswerDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/qd.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/qa_database.html#QuestionAnswerDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.qa_database.QuestionAnswerDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.qa_database.</span></span><span class="sig-name descname"><span class="pre">QuestionAnswerDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/qd.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/qa_database.html#QuestionAnswerDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.qa_database.QuestionAnswerDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Question Answer Database class</p>
 <dl class="py method">
@@ -575,7 +589,7 @@ retrieve_all_question_answers method. It then writes this data to the CSV file.<
 <p>This file contains the RankingDatabase class which is used to store and retrieve</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.chat.db.ranking_database.RankingDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.ranking_database.</span></span><span class="sig-name descname"><span class="pre">RankingDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/jaredwilber/Desktop/pykoi/docs/ranking.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/ranking_database.html#RankingDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.ranking_database.RankingDatabase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.chat.db.ranking_database.</span></span><span class="sig-name descname"><span class="pre">RankingDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/Users/joseortiz/Coding/CambioML/pykoi/docs/ranking.db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/db/ranking_database.html#RankingDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.db.ranking_database.RankingDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Ranking Database class</p>
 <dl class="py method">

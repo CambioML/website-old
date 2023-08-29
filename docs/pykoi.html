@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>pykoi package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
@@ -270,8 +284,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pykoi.rlhf.html">pykoi.rlhf package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pykoi.rlhf.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pykoi.rlhf.html#pykoi-rlhf-module">pykoi.rlhf module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pykoi.rlhf.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pykoi.rlhf.html#module-pykoi.rlhf">pykoi.rlhf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pykoi.rlhf.html#module-0">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pykoi.component.html">pykoi.component package</a><ul>
@@ -325,8 +339,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pykoi.interactives.html">pykoi.interactives package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pykoi.interactives.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pykoi.interactives.html#pykoi-interactives-barchart-module">pykoi.interactives.barchart module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pykoi.interactives.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pykoi.interactives.html#module-pykoi.interactives.barchart">pykoi.interactives.barchart module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart"><code class="docutils literal notranslate"><span class="pre">Barchart</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart.add_params"><code class="docutils literal notranslate"><span class="pre">Barchart.add_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart.randomize_hash_id"><code class="docutils literal notranslate"><span class="pre">Barchart.randomize_hash_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pykoi.interactives.html#module-pykoi.interactives">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pykoi.telemetry.html">pykoi.telemetry package</a><ul>
@@ -369,7 +390,18 @@
 <li class="toctree-l3"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.events.identify_cloud_provider"><code class="docutils literal notranslate"><span class="pre">identify_cloud_provider()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pykoi.telemetry.html#pykoi-telemetry-telemetry-module">pykoi.telemetry.telemetry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pykoi.telemetry.html#module-pykoi.telemetry.telemetry">pykoi.telemetry.telemetry module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry"><code class="docutils literal notranslate"><span class="pre">Telemetry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._user_id_path"><code class="docutils literal notranslate"><span class="pre">Telemetry._user_id_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._user_id"><code class="docutils literal notranslate"><span class="pre">Telemetry._user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._unknown"><code class="docutils literal notranslate"><span class="pre">Telemetry._unknown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.capture"><code class="docutils literal notranslate"><span class="pre">Telemetry.capture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.context"><code class="docutils literal notranslate"><span class="pre">Telemetry.context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.user_id"><code class="docutils literal notranslate"><span class="pre">Telemetry.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pykoi.telemetry.html#module-pykoi.telemetry">Module contents</a></li>
 </ul>
 </li>
@@ -389,8 +421,30 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-test-application-module">tests.test_application module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#tests-test-state-module">tests.test_state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_application">tests.test_application module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_application.TestApplication"><code class="docutils literal notranslate"><span class="pre">TestApplication</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_application.TestApplication.setUp"><code class="docutils literal notranslate"><span class="pre">TestApplication.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_application.TestApplication.test_add_component"><code class="docutils literal notranslate"><span class="pre">TestApplication.test_add_component()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_state">tests.test_state module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_state.TestState"><code class="docutils literal notranslate"><span class="pre">TestState</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestState.test_call_method"><code class="docutils literal notranslate"><span class="pre">TestState.test_call_method()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestState.test_get_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_get_attribute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestState.test_get_non_existing_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_get_non_existing_attribute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestState.test_set_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_set_attribute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_state.TestStore"><code class="docutils literal notranslate"><span class="pre">TestStore</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestStore.test_decrement"><code class="docutils literal notranslate"><span class="pre">TestStore.test_decrement()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestStore.test_hello"><code class="docutils literal notranslate"><span class="pre">TestStore.test_hello()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_state.TestStore.test_increment"><code class="docutils literal notranslate"><span class="pre">TestStore.test_increment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
 </ul>
 </li>
@@ -400,14 +454,263 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="pykoi-application-module">
-<h2>pykoi.application module<a class="headerlink" href="#pykoi-application-module" title="Permalink to this heading">#</a></h2>
+<section id="module-pykoi.application">
+<span id="pykoi-application-module"></span><h2>pykoi.application module<a class="headerlink" href="#module-pykoi.application" title="Permalink to this heading">#</a></h2>
+<p>Application module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.Application">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">Application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">share</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.None" title="pykoi.chat.llm.abs_llm.AbsLlm.None"><span class="pre">None</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.None" title="pykoi.chat.llm.abs_llm.AbsLlm.None"><span class="pre">None</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_telemetry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Application class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.add_component">
+<span class="sig-name descname"><span class="pre">add_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.add_component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.add_component" title="Permalink to this definition">#</a></dt>
+<dd><p>Add a component to the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>Any</em>) – The component to be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.auth_required">
+<span class="sig-name descname"><span class="pre">auth_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HTTPBasicCredentials</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(HTTPBasic)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.auth_required"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.auth_required" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.authenticate_user">
+<span class="sig-name descname"><span class="pre">authenticate_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fake_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.authenticate_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.authenticate_user" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.create_chatbot_comparator_route">
+<span class="sig-name descname"><span class="pre">create_chatbot_comparator_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.create_chatbot_comparator_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.create_chatbot_comparator_route" title="Permalink to this definition">#</a></dt>
+<dd><p>Create chatbot comparator routes for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> (<em>FastAPI</em>) – The FastAPI application.</p></li>
+<li><p><strong>component</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The component for which the routes are being created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.create_chatbot_route">
+<span class="sig-name descname"><span class="pre">create_chatbot_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.create_chatbot_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.create_chatbot_route" title="Permalink to this definition">#</a></dt>
+<dd><p>Create chatbot routes for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> (<em>FastAPI</em>) – The FastAPI application.</p></li>
+<li><p><strong>component</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The component for which the routes are being created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.create_feedback_route">
+<span class="sig-name descname"><span class="pre">create_feedback_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.create_feedback_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.create_feedback_route" title="Permalink to this definition">#</a></dt>
+<dd><p>Create feedback routes for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> (<em>FastAPI</em>) – The FastAPI application.</p></li>
+<li><p><strong>component</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The component for which the routes are being created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.create_nvml_route">
+<span class="sig-name descname"><span class="pre">create_nvml_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.create_nvml_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.create_nvml_route" title="Permalink to this definition">#</a></dt>
+<dd><p>Create NVML routes for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> (<em>FastAPI</em>) – The FastAPI application.</p></li>
+<li><p><strong>component</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The component for which the routes are being created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.create_qa_retrieval_route">
+<span class="sig-name descname"><span class="pre">create_qa_retrieval_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.create_qa_retrieval_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.create_qa_retrieval_route" title="Permalink to this definition">#</a></dt>
+<dd><p>Create QA retrieval routes for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> (<em>FastAPI</em>) – The FastAPI application.</p></li>
+<li><p><strong>component</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The component for which the routes are being created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.display"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.display" title="Permalink to this definition">#</a></dt>
+<dd><p>Run the application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.dummy_auth">
+<span class="sig-name descname"><span class="pre">dummy_auth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.dummy_auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.dummy_auth" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.get_auth_dependency">
+<span class="sig-name descname"><span class="pre">get_auth_dependency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.get_auth_dependency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.get_auth_dependency" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.application.Application.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#Application.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.Application.run" title="Permalink to this definition">#</a></dt>
+<dd><p>Run the application.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.ComparatorInsertRequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">ComparatorInsertRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pykoi.application.ModelAnswer" title="pykoi.application.ModelAnswer"><span class="pre">ModelAnswer</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#ComparatorInsertRequest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.ComparatorInsertRequest" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.ComparatorInsertRequest.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pykoi.application.ModelAnswer" title="pykoi.application.ModelAnswer"><span class="pre">ModelAnswer</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pykoi.application.ComparatorInsertRequest.data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.InferenceRankingTable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">InferenceRankingTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.None" title="pykoi.chat.llm.abs_llm.AbsLlm.None"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#InferenceRankingTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.InferenceRankingTable" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.InferenceRankingTable.n">
+<span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.None" title="pykoi.chat.llm.abs_llm.AbsLlm.None"><span class="pre">None</span></a></em><a class="headerlink" href="#pykoi.application.InferenceRankingTable.n" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.ModelAnswer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">ModelAnswer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#ModelAnswer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.ModelAnswer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.ModelAnswer.answer">
+<span class="sig-name descname"><span class="pre">answer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.ModelAnswer.answer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.ModelAnswer.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.ModelAnswer.model" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.ModelAnswer.qid">
+<span class="sig-name descname"><span class="pre">qid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pykoi.application.ModelAnswer.qid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.ModelAnswer.rank">
+<span class="sig-name descname"><span class="pre">rank</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pykoi.application.ModelAnswer.rank" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.RankingTableUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">RankingTableUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_ranking_answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_ranking_answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#RankingTableUpdate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.RankingTableUpdate" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.RankingTableUpdate.low_ranking_answer">
+<span class="sig-name descname"><span class="pre">low_ranking_answer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.RankingTableUpdate.low_ranking_answer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.RankingTableUpdate.question">
+<span class="sig-name descname"><span class="pre">question</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.RankingTableUpdate.question" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.RankingTableUpdate.up_ranking_answer">
+<span class="sig-name descname"><span class="pre">up_ranking_answer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.RankingTableUpdate.up_ranking_answer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.UpdateQATable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">UpdateQATable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vote_status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#UpdateQATable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.UpdateQATable" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.UpdateQATable.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pykoi.application.UpdateQATable.id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.application.UpdateQATable.vote_status">
+<span class="sig-name descname"><span class="pre">vote_status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.application.UpdateQATable.vote_status" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.application.UserInDB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.application.</span></span><span class="sig-name descname"><span class="pre">UserInDB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashed_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/application.html#UserInDB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.application.UserInDB" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 </section>
-<section id="pykoi-state-module">
-<h2>pykoi.state module<a class="headerlink" href="#pykoi-state-module" title="Permalink to this heading">#</a></h2>
+<section id="module-pykoi.state">
+<span id="pykoi-state-module"></span><h2>pykoi.state module<a class="headerlink" href="#module-pykoi.state" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.state.State">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.state.</span></span><span class="sig-name descname"><span class="pre">State</span></span><a class="reference internal" href="_modules/pykoi/state.html#State"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.state.State" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.state.Store">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.state.</span></span><span class="sig-name descname"><span class="pre">Store</span></span><a class="reference internal" href="_modules/pykoi/state.html#Store"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.state.Store" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykoi.state.State" title="pykoi.state.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.state.Store.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#pykoi.state.Store.count" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.state.Store.decrement">
+<span class="sig-name descname"><span class="pre">decrement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/state.html#Store.decrement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.state.Store.decrement" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.state.Store.hello">
+<span class="sig-name descname"><span class="pre">hello</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/state.html#Store.hello"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.state.Store.hello" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.state.Store.increment">
+<span class="sig-name descname"><span class="pre">increment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/state.html#Store.increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.state.Store.increment" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.state.Store.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jared'</span></em><a class="headerlink" href="#pykoi.state.Store.name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="module-pykoi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pykoi" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -486,9 +789,64 @@
 <li><a class="reference internal" href="#">pykoi package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#pykoi-application-module">pykoi.application module</a></li>
-<li><a class="reference internal" href="#pykoi-state-module">pykoi.state module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-pykoi.application">pykoi.application module</a><ul>
+<li><a class="reference internal" href="#pykoi.application.Application"><code class="docutils literal notranslate"><span class="pre">Application</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.Application.add_component"><code class="docutils literal notranslate"><span class="pre">Application.add_component()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.auth_required"><code class="docutils literal notranslate"><span class="pre">Application.auth_required()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.authenticate_user"><code class="docutils literal notranslate"><span class="pre">Application.authenticate_user()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.create_chatbot_comparator_route"><code class="docutils literal notranslate"><span class="pre">Application.create_chatbot_comparator_route()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.create_chatbot_route"><code class="docutils literal notranslate"><span class="pre">Application.create_chatbot_route()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.create_feedback_route"><code class="docutils literal notranslate"><span class="pre">Application.create_feedback_route()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.create_nvml_route"><code class="docutils literal notranslate"><span class="pre">Application.create_nvml_route()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.create_qa_retrieval_route"><code class="docutils literal notranslate"><span class="pre">Application.create_qa_retrieval_route()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.display"><code class="docutils literal notranslate"><span class="pre">Application.display()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.dummy_auth"><code class="docutils literal notranslate"><span class="pre">Application.dummy_auth()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.get_auth_dependency"><code class="docutils literal notranslate"><span class="pre">Application.get_auth_dependency()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.Application.run"><code class="docutils literal notranslate"><span class="pre">Application.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.ComparatorInsertRequest"><code class="docutils literal notranslate"><span class="pre">ComparatorInsertRequest</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.ComparatorInsertRequest.data"><code class="docutils literal notranslate"><span class="pre">ComparatorInsertRequest.data</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.InferenceRankingTable"><code class="docutils literal notranslate"><span class="pre">InferenceRankingTable</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.InferenceRankingTable.n"><code class="docutils literal notranslate"><span class="pre">InferenceRankingTable.n</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.ModelAnswer"><code class="docutils literal notranslate"><span class="pre">ModelAnswer</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.ModelAnswer.answer"><code class="docutils literal notranslate"><span class="pre">ModelAnswer.answer</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.ModelAnswer.model"><code class="docutils literal notranslate"><span class="pre">ModelAnswer.model</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.ModelAnswer.qid"><code class="docutils literal notranslate"><span class="pre">ModelAnswer.qid</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.ModelAnswer.rank"><code class="docutils literal notranslate"><span class="pre">ModelAnswer.rank</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.RankingTableUpdate"><code class="docutils literal notranslate"><span class="pre">RankingTableUpdate</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.RankingTableUpdate.low_ranking_answer"><code class="docutils literal notranslate"><span class="pre">RankingTableUpdate.low_ranking_answer</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.RankingTableUpdate.question"><code class="docutils literal notranslate"><span class="pre">RankingTableUpdate.question</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.RankingTableUpdate.up_ranking_answer"><code class="docutils literal notranslate"><span class="pre">RankingTableUpdate.up_ranking_answer</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.UpdateQATable"><code class="docutils literal notranslate"><span class="pre">UpdateQATable</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.application.UpdateQATable.id"><code class="docutils literal notranslate"><span class="pre">UpdateQATable.id</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.application.UpdateQATable.vote_status"><code class="docutils literal notranslate"><span class="pre">UpdateQATable.vote_status</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykoi.application.UserInDB"><code class="docutils literal notranslate"><span class="pre">UserInDB</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykoi.state">pykoi.state module</a><ul>
+<li><a class="reference internal" href="#pykoi.state.State"><code class="docutils literal notranslate"><span class="pre">State</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.state.Store"><code class="docutils literal notranslate"><span class="pre">Store</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.state.Store.count"><code class="docutils literal notranslate"><span class="pre">Store.count</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.state.Store.decrement"><code class="docutils literal notranslate"><span class="pre">Store.decrement()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.state.Store.hello"><code class="docutils literal notranslate"><span class="pre">Store.hello()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.state.Store.increment"><code class="docutils literal notranslate"><span class="pre">Store.increment()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.state.Store.name"><code class="docutils literal notranslate"><span class="pre">Store.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykoi">Module contents</a></li>
 </ul>
 </li>
 </ul>

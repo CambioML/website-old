@@ -1,0 +1,383 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+        <title>pykoi.interactives.barchart - pykoi 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4a2a2a4c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-admonition-title--note: #00ebc7;
+  --color-admonition-title-background--note: #a2fff1;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">pykoi 0.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tour.html">Quick Tour</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_collection_feedback.html">Collecting User Feedback via a Chat Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_comparison.html">Comparing Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rlhf.html">Reinforcement Learning with Human Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../embedding.html">Vista</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../modules.html">pykoi</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of pykoi</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../pykoi.html">pykoi package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pykoi package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../pykoi.chat.html">pykoi.chat package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of pykoi.chat package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../pykoi.chat.db.html">pykoi.chat.db package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../pykoi.chat.llm.html">pykoi.chat.llm package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pykoi.rlhf.html">pykoi.rlhf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pykoi.component.html">pykoi.component package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pykoi.interactives.html">pykoi.interactives package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pykoi.telemetry.html">pykoi.telemetry package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../tests.html">tests package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of tests package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tests.chat.html">tests.chat package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of tests.chat package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tests.chat.db.html">tests.chat.db package</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tests.chat.llm.html">tests.chat.llm package</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tests.component.html">tests.component package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Social</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../community.html">Community</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for pykoi.interactives.barchart</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module for the compiled Svelte Barchart interactive.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+
+
+<div class="viewcode-block" id="Barchart"><a class="viewcode-back" href="../../../pykoi.interactives.html#pykoi.interactives.barchart.Barchart">[docs]</a><span class="k">class</span> <span class="nc">Barchart</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the component.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Barchart&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iife_script</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;script&gt;var Barchart=function(){&quot;use strict&quot;;var Me=document.createElement(&quot;style&quot;);Me.textContent=`@import&quot;https://fonts.googleapis.com/css?family=Work+Sans:400|Lato:400|Inconsolata:400&quot;;.svelte-1vd4qdl{font-family:Lato}#bar-chart-holder.svelte-1vd4qdl{height:100%;width:100%}rect.svelte-1vd4qdl:hover{stroke:red;stroke-width:5}.axis-text.svelte-1vd4qdl{font-size:12px}.axis-line.svelte-1vd4qdl{stroke-width:3;stroke:#000;fill:none}</span>
+<span class="s2">`,document.head.appendChild(Me);function z()</span><span class="si">{}</span><span class="s2">function ke(e){return e()}function Ne(){return Object.create(null)}function W(e){e.forEach(ke)}function Re(e){return typeof e==&quot;function&quot;}function mn(e,n){return e!=e?n==n:e!==n||e&amp;&amp;typeof e==&quot;object&quot;||typeof e==&quot;function&quot;}function xn(e){return Object.keys(e).length===0}function R(e,n){e.appendChild(n)}function B(e,n,t){e.insertBefore(n,t||null)}function S(e){e.parentNode&amp;&amp;e.parentNode.removeChild(e)}function re(e,n){for(let t=0;t&lt;e.length;t+=1)e[t]&amp;&amp;e[t].d(n)}function bn(e){return document.createElement(e)}function $(e){return document.createElementNS(&quot;http://www.w3.org/2000/svg&quot;,e)}function X(e){return document.createTextNode(e)}function Ae(){return X(&quot;&quot;)}function x(e,n,t){t==null?e.removeAttribute(n):e.getAttribute(n)!==t&amp;&amp;e.setAttribute(n,t)}function pn(e){return Array.from(e.childNodes)}function yn(e,n){n=&quot;&quot;+n,e.data!==n&amp;&amp;(e.data=n)}let ie;function L(e){ie=e}const j=[],$e=[];let P=[];const qe=[],wn=Promise.resolve();let ae=!1;function _n(){ae||(ae=!0,wn.then(Ee))}function fe(e){P.push(e)}const oe=new Set;let I=0;function Ee(){if(I!==0)return;const e=ie;do{try{for(;I&lt;j.length;){const n=j[I];I++,L(n),vn(n.$$)}}catch(n){throw j.length=0,I=0,n}for(L(null),j.length=0,I=0;$e.length;)$e.pop()();for(let n=0;n&lt;P.length;n+=1){const t=P[n];oe.has(t)||(oe.add(t),t())}P.length=0}while(j.length);for(;qe.length;)qe.pop()();ae=!1,oe.clear(),L(e)}function vn(e){if(e.fragment!==null){e.update(),W(e.before_update);const n=e.dirty;e.dirty=[-1],e.fragment&amp;&amp;e.fragment.p(e.ctx,n),e.after_update.forEach(fe)}}function Mn(e){const n=[],t=[];P.forEach(r=&gt;e.indexOf(r)===-1?n.push(r):t.push(r)),t.forEach(r=&gt;r()),P=n}const kn=new Set;function Nn(e,n){e&amp;&amp;e.i&amp;&amp;(kn.delete(e),e.i(n))}function Rn(e,n,t,r){const{fragment:i,after_update:f}=e.$$;i&amp;&amp;i.m(n,t),r||fe(()=&gt;{const a=e.$$.on_mount.map(ke).filter(Re);e.$$.on_destroy?e.$$.on_destroy.push(...a):W(a),e.$$.on_mount=[]}),f.forEach(fe)}function An(e,n){const t=e.$$;t.fragment!==null&amp;&amp;(Mn(t.after_update),W(t.on_destroy),t.fragment&amp;&amp;t.fragment.d(n),t.on_destroy=t.fragment=null,t.ctx=[])}function $n(e,n){e.$$.dirty[0]===-1&amp;&amp;(j.push(e),_n(),e.$$.dirty.fill(0)),e.$$.dirty[n/31|0]|=1&lt;&lt;n%31}function qn(e,n,t,r,i,f,a,o=[-1]){const u=ie;L(e);const l=e.$$={fragment:null,ctx:[],props:f,update:z,not_equal:i,bound:Ne(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(u?u.$$.context:[])),callbacks:Ne(),dirty:o,skip_bound:!1,root:n.target||u.$$.root};a&amp;&amp;a(l.root);let h=!1;if(l.ctx=t?t(e,n.props||</span><span class="si">{}</span><span class="s2">,(c,s,...p)=&gt;{const m=p.length?p[0]:s;return l.ctx&amp;&amp;i(l.ctx[c],l.ctx[c]=m)&amp;&amp;(!l.skip_bound&amp;&amp;l.bound[c]&amp;&amp;l.bound[c](m),h&amp;&amp;$n(e,c)),s}):[],l.update(),h=!0,W(l.before_update),l.fragment=r?r(l.ctx):!1,n.target){if(n.hydrate){const c=pn(n.target);l.fragment&amp;&amp;l.fragment.l(c),c.forEach(S)}else l.fragment&amp;&amp;l.fragment.c();n.intro&amp;&amp;Nn(e.$$.fragment),Rn(e,n.target,n.anchor,n.customElement),Ee()}L(u)}class En{$destroy(){An(this,1),this.$destroy=z}$on(n,t){if(!Re(t))return z;const r=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return r.push(t),()=&gt;{const i=r.indexOf(t);i!==-1&amp;&amp;r.splice(i,1)}}$set(n){this.$$set&amp;&amp;!xn(n)&amp;&amp;(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}function Sn(e,n){let t;if(n===void 0)for(const r of e)r!=null&amp;&amp;(t&lt;r||t===void 0&amp;&amp;r&gt;=r)&amp;&amp;(t=r);else{let r=-1;for(let i of e)(i=n(i,++r,e))!=null&amp;&amp;(t&lt;i||t===void 0&amp;&amp;i&gt;=i)&amp;&amp;(t=i)}return t}function Se(e,n){return e&lt;n?-1:e&gt;n?1:e&gt;=n?0:NaN}function je(e){let n=e,t=e;e.length===1&amp;&amp;(n=(a,o)=&gt;e(a)-o,t=jn(e));function r(a,o,u,l){for(u==null&amp;&amp;(u=0),l==null&amp;&amp;(l=a.length);u&lt;l;){const h=u+l&gt;&gt;&gt;1;t(a[h],o)&lt;0?u=h+1:l=h}return u}function i(a,o,u,l){for(u==null&amp;&amp;(u=0),l==null&amp;&amp;(l=a.length);u&lt;l;){const h=u+l&gt;&gt;&gt;1;t(a[h],o)&gt;0?l=h:u=h+1}return u}function f(a,o,u,l){u==null&amp;&amp;(u=0),l==null&amp;&amp;(l=a.length);const h=r(a,o,u,l-1);return h&gt;u&amp;&amp;n(a[h-1],o)&gt;-n(a[h],o)?h-1:h}return{left:r,center:f,right:i}}function jn(e){return(n,t)=&gt;Se(e(n),t)}function Pn(e){return e===null?NaN:+e}const In=je(Se).right;je(Pn).center;const Cn=In;var le=Math.sqrt(50),ue=Math.sqrt(10),se=Math.sqrt(2);function Hn(e,n,t){var r,i=-1,f,a,o;if(n=+n,e=+e,t=+t,e===n&amp;&amp;t&gt;0)return[e];if((r=n&lt;e)&amp;&amp;(f=e,e=n,n=f),(o=Pe(e,n,t))===0||!isFinite(o))return[];if(o&gt;0){let u=Math.round(e/o),l=Math.round(n/o);for(u*o&lt;e&amp;&amp;++u,l*o&gt;n&amp;&amp;--l,a=new Array(f=l-u+1);++i&lt;f;)a[i]=(u+i)*o}else{o=-o;let u=Math.round(e*o),l=Math.round(n*o);for(u/o&lt;e&amp;&amp;++u,l/o&gt;n&amp;&amp;--l,a=new Array(f=l-u+1);++i&lt;f;)a[i]=(u+i)/o}return r&amp;&amp;a.reverse(),a}function Pe(e,n,t){var r=(n-e)/Math.max(0,t),i=Math.floor(Math.log(r)/Math.LN10),f=r/Math.pow(10,i);return i&gt;=0?(f&gt;=le?10:f&gt;=ue?5:f&gt;=se?2:1)*Math.pow(10,i):-Math.pow(10,-i)/(f&gt;=le?10:f&gt;=ue?5:f&gt;=se?2:1)}function Fn(e,n,t){var r=Math.abs(n-e)/Math.max(0,t),i=Math.pow(10,Math.floor(Math.log(r)/Math.LN10)),f=r/i;return f&gt;=le?i*=10:f&gt;=ue?i*=5:f&gt;=se&amp;&amp;(i*=2),n&lt;e?-i:i}function On(e,n,t){e=+e,n=+n,t=(i=arguments.length)&lt;2?(n=e,e=0,1):i&lt;3?1:+t;for(var r=-1,i=Math.max(0,Math.ceil((n-e)/t))|0,f=new Array(i);++r&lt;i;)f[r]=e+r*t;return f}function ce(e,n){switch(arguments.length){case 0:break;case 1:this.range(e);break;default:this.range(n).domain(e);break}return this}const Ie=Symbol(&quot;implicit&quot;);function he(){var e=new Map,n=[],t=[],r=Ie;function i(f){var a=f+&quot;&quot;,o=e.get(a);if(!o){if(r!==Ie)return r;e.set(a,o=n.push(f))}return t[(o-1)%t.length]}return i.domain=function(f){if(!arguments.length)return n.slice();n=[],e=new Map;for(const a of f){const o=a+&quot;&quot;;e.has(o)||e.set(o,n.push(a))}return i},i.range=function(f){return arguments.length?(t=Array.from(f),i):t.slice()},i.unknown=function(f){return arguments.length?(r=f,i):r},i.copy=function(){return he(n,t).unknown(r)},ce.apply(i,arguments),i}function Ce(){var e=he().unknown(void 0),n=e.domain,t=e.range,r=0,i=1,f,a,o=!1,u=0,l=0,h=.5;delete e.unknown;function c(){var s=n().length,p=i&lt;r,m=p?i:r,d=p?r:i;f=(d-m)/Math.max(1,s-u+l*2),o&amp;&amp;(f=Math.floor(f)),m+=(d-m-f*(s-u))*h,a=f*(1-u),o&amp;&amp;(m=Math.round(m),a=Math.round(a));var y=On(s).map(function(g){return m+f*g});return t(p?y.reverse():y)}return e.domain=function(s){return arguments.length?(n(s),c()):n()},e.range=function(s){return arguments.length?([r,i]=s,r=+r,i=+i,c()):[r,i]},e.rangeRound=function(s){return[r,i]=s,r=+r,i=+i,o=!0,c()},e.bandwidth=function(){return a},e.step=function(){return f},e.round=function(s){return arguments.length?(o=!!s,c()):o},e.padding=function(s){return arguments.length?(u=Math.min(1,l=+s),c()):u},e.paddingInner=function(s){return arguments.length?(u=Math.min(1,s),c()):u},e.paddingOuter=function(s){return arguments.length?(l=+s,c()):l},e.align=function(s){return arguments.length?(h=Math.max(0,Math.min(1,s)),c()):h},e.copy=function(){return Ce(n(),[r,i]).round(o).paddingInner(u).paddingOuter(l).align(h)},ce.apply(c(),arguments)}function de(e,n,t){e.prototype=n.prototype=t,t.constructor=e}function He(e,n){var t=Object.create(e.prototype);for(var r in n)t[r]=n[r];return t}function D()</span><span class="si">{}</span><span class="s2">var T=.7,U=1/T,C=&quot;</span><span class="se">\\</span><span class="s2">s*([+-]?</span><span class="se">\\</span><span class="s2">d+)</span><span class="se">\\</span><span class="s2">s*&quot;,G=&quot;</span><span class="se">\\</span><span class="s2">s*([+-]?</span><span class="se">\\</span><span class="s2">d*</span><span class="se">\\</span><span class="s2">.?</span><span class="se">\\</span><span class="s2">d+(?:[eE][+-]?</span><span class="se">\\</span><span class="s2">d+)?)</span><span class="se">\\</span><span class="s2">s*&quot;,k=&quot;</span><span class="se">\\</span><span class="s2">s*([+-]?</span><span class="se">\\</span><span class="s2">d*</span><span class="se">\\</span><span class="s2">.?</span><span class="se">\\</span><span class="s2">d+(?:[eE][+-]?</span><span class="se">\\</span><span class="s2">d+)?)%</span><span class="se">\\</span><span class="s2">s*&quot;,zn=/^#([0-9a-f]{3,8})$/,Bn=new RegExp(&quot;^rgb</span><span class="se">\\</span><span class="s2">(&quot;+[C,C,C]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Ln=new RegExp(&quot;^rgb</span><span class="se">\\</span><span class="s2">(&quot;+[k,k,k]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Dn=new RegExp(&quot;^rgba</span><span class="se">\\</span><span class="s2">(&quot;+[C,C,C,G]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Tn=new RegExp(&quot;^rgba</span><span class="se">\\</span><span class="s2">(&quot;+[k,k,k,G]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Gn=new RegExp(&quot;^hsl</span><span class="se">\\</span><span class="s2">(&quot;+[G,k,k]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Vn=new RegExp(&quot;^hsla</span><span class="se">\\</span><span class="s2">(&quot;+[G,k,k,G]+&quot;</span><span class="se">\\</span><span class="s2">)$&quot;),Fe={aliceblue:15792383,antiquewhite:16444375,aqua:65535,aquamarine:8388564,azure:15794175,beige:16119260,bisque:16770244,black:0,blanchedalmond:16772045,blue:255,blueviolet:9055202,brown:10824234,burlywood:14596231,cadetblue:6266528,chartreuse:8388352,chocolate:13789470,coral:16744272,cornflowerblue:6591981,cornsilk:16775388,crimson:14423100,cyan:65535,darkblue:139,darkcyan:35723,darkgoldenrod:12092939,darkgray:11119017,darkgreen:25600,darkgrey:11119017,darkkhaki:12433259,darkmagenta:9109643,darkolivegreen:5597999,darkorange:16747520,darkorchid:10040012,darkred:9109504,darksalmon:15308410,darkseagreen:9419919,darkslateblue:4734347,darkslategray:3100495,darkslategrey:3100495,darkturquoise:52945,darkviolet:9699539,deeppink:16716947,deepskyblue:49151,dimgray:6908265,dimgrey:6908265,dodgerblue:2003199,firebrick:11674146,floralwhite:16775920,forestgreen:2263842,fuchsia:16711935,gainsboro:14474460,ghostwhite:16316671,gold:16766720,goldenrod:14329120,gray:8421504,green:32768,greenyellow:11403055,grey:8421504,honeydew:15794160,hotpink:16738740,indianred:13458524,indigo:4915330,ivory:16777200,khaki:15787660,lavender:15132410,lavenderblush:16773365,lawngreen:8190976,lemonchiffon:16775885,lightblue:11393254,lightcoral:15761536,lightcyan:14745599,lightgoldenrodyellow:16448210,lightgray:13882323,lightgreen:9498256,lightgrey:13882323,lightpink:16758465,lightsalmon:16752762,lightseagreen:2142890,lightskyblue:8900346,lightslategray:7833753,lightslategrey:7833753,lightsteelblue:11584734,lightyellow:16777184,lime:65280,limegreen:3329330,linen:16445670,magenta:16711935,maroon:8388608,mediumaquamarine:6737322,mediumblue:205,mediumorchid:12211667,mediumpurple:9662683,mediumseagreen:3978097,mediumslateblue:8087790,mediumspringgreen:64154,mediumturquoise:4772300,mediumvioletred:13047173,midnightblue:1644912,mintcream:16121850,mistyrose:16770273,moccasin:16770229,navajowhite:16768685,navy:128,oldlace:16643558,olive:8421376,olivedrab:7048739,orange:16753920,orangered:16729344,orchid:14315734,palegoldenrod:15657130,palegreen:10025880,paleturquoise:11529966,palevioletred:14381203,papayawhip:16773077,peachpuff:16767673,peru:13468991,pink:16761035,plum:14524637,powderblue:11591910,purple:8388736,rebeccapurple:6697881,red:16711680,rosybrown:12357519,royalblue:4286945,saddlebrown:9127187,salmon:16416882,sandybrown:16032864,seagreen:3050327,seashell:16774638,sienna:10506797,silver:12632256,skyblue:8900331,slateblue:6970061,slategray:7372944,slategrey:7372944,snow:16775930,springgreen:65407,steelblue:4620980,tan:13808780,teal:32896,thistle:14204888,tomato:16737095,turquoise:4251856,violet:15631086,wheat:16113331,white:16777215,whitesmoke:16119285,yellow:16776960,yellowgreen:10145074};de(D,V,{copy:function(e){return Object.assign(new this.constructor,this,e)},displayable:function(){return this.rgb().displayable()},hex:Oe,formatHex:Oe,formatHsl:Wn,formatRgb:ze,toString:ze});function Oe(){return this.rgb().formatHex()}function Wn(){return Ge(this).formatHsl()}function ze(){return this.rgb().formatRgb()}function V(e){var n,t;return e=(e+&quot;&quot;).trim().toLowerCase(),(n=zn.exec(e))?(t=n[1].length,n=parseInt(n[1],16),t===6?Be(n):t===3?new w(n&gt;&gt;8&amp;15|n&gt;&gt;4&amp;240,n&gt;&gt;4&amp;15|n&amp;240,(n&amp;15)&lt;&lt;4|n&amp;15,1):t===8?Y(n&gt;&gt;24&amp;255,n&gt;&gt;16&amp;255,n&gt;&gt;8&amp;255,(n&amp;255)/255):t===4?Y(n&gt;&gt;12&amp;15|n&gt;&gt;8&amp;240,n&gt;&gt;8&amp;15|n&gt;&gt;4&amp;240,n&gt;&gt;4&amp;15|n&amp;240,((n&amp;15)&lt;&lt;4|n&amp;15)/255):null):(n=Bn.exec(e))?new w(n[1],n[2],n[3],1):(n=Ln.exec(e))?new w(n[1]*255/100,n[2]*255/100,n[3]*255/100,1):(n=Dn.exec(e))?Y(n[1],n[2],n[3],n[4]):(n=Tn.exec(e))?Y(n[1]*255/100,n[2]*255/100,n[3]*255/100,n[4]):(n=Gn.exec(e))?Te(n[1],n[2]/100,n[3]/100,1):(n=Vn.exec(e))?Te(n[1],n[2]/100,n[3]/100,n[4]):Fe.hasOwnProperty(e)?Be(Fe[e]):e===&quot;transparent&quot;?new w(NaN,NaN,NaN,0):null}function Be(e){return new w(e&gt;&gt;16&amp;255,e&gt;&gt;8&amp;255,e&amp;255,1)}function Y(e,n,t,r){return r&lt;=0&amp;&amp;(e=n=t=NaN),new w(e,n,t,r)}function Xn(e){return e instanceof D||(e=V(e)),e?(e=e.rgb(),new w(e.r,e.g,e.b,e.opacity)):new w}function ge(e,n,t,r){return arguments.length===1?Xn(e):new w(e,n,t,r==null?1:r)}function w(e,n,t,r){this.r=+e,this.g=+n,this.b=+t,this.opacity=+r}de(w,ge,He(D,{brighter:function(e){return e=e==null?U:Math.pow(U,e),new w(this.r*e,this.g*e,this.b*e,this.opacity)},darker:function(e){return e=e==null?T:Math.pow(T,e),new w(this.r*e,this.g*e,this.b*e,this.opacity)},rgb:function(){return this},displayable:function(){return-.5&lt;=this.r&amp;&amp;this.r&lt;255.5&amp;&amp;-.5&lt;=this.g&amp;&amp;this.g&lt;255.5&amp;&amp;-.5&lt;=this.b&amp;&amp;this.b&lt;255.5&amp;&amp;0&lt;=this.opacity&amp;&amp;this.opacity&lt;=1},hex:Le,formatHex:Le,formatRgb:De,toString:De}));function Le(){return&quot;#&quot;+me(this.r)+me(this.g)+me(this.b)}function De(){var e=this.opacity;return e=isNaN(e)?1:Math.max(0,Math.min(1,e)),(e===1?&quot;rgb(&quot;:&quot;rgba(&quot;)+Math.max(0,Math.min(255,Math.round(this.r)||0))+&quot;, &quot;+Math.max(0,Math.min(255,Math.round(this.g)||0))+&quot;, &quot;+Math.max(0,Math.min(255,Math.round(this.b)||0))+(e===1?&quot;)&quot;:&quot;, &quot;+e+&quot;)&quot;)}function me(e){return e=Math.max(0,Math.min(255,Math.round(e)||0)),(e&lt;16?&quot;0&quot;:&quot;&quot;)+e.toString(16)}function Te(e,n,t,r){return r&lt;=0?e=n=t=NaN:t&lt;=0||t&gt;=1?e=n=NaN:n&lt;=0&amp;&amp;(e=NaN),new N(e,n,t,r)}function Ge(e){if(e instanceof N)return new N(e.h,e.s,e.l,e.opacity);if(e instanceof D||(e=V(e)),!e)return new N;if(e instanceof N)return e;e=e.rgb();var n=e.r/255,t=e.g/255,r=e.b/255,i=Math.min(n,t,r),f=Math.max(n,t,r),a=NaN,o=f-i,u=(f+i)/2;return o?(n===f?a=(t-r)/o+(t&lt;r)*6:t===f?a=(r-n)/o+2:a=(n-t)/o+4,o/=u&lt;.5?f+i:2-f-i,a*=60):o=u&gt;0&amp;&amp;u&lt;1?0:a,new N(a,o,u,e.opacity)}function Un(e,n,t,r){return arguments.length===1?Ge(e):new N(e,n,t,r==null?1:r)}function N(e,n,t,r){this.h=+e,this.s=+n,this.l=+t,this.opacity=+r}de(N,Un,He(D,{brighter:function(e){return e=e==null?U:Math.pow(U,e),new N(this.h,this.s,this.l*e,this.opacity)},darker:function(e){return e=e==null?T:Math.pow(T,e),new N(this.h,this.s,this.l*e,this.opacity)},rgb:function(){var e=this.h%360+(this.h&lt;0)*360,n=isNaN(e)||isNaN(this.s)?0:this.s,t=this.l,r=t+(t&lt;.5?t:1-t)*n,i=2*t-r;return new w(xe(e&gt;=240?e-240:e+120,i,r),xe(e,i,r),xe(e&lt;120?e+240:e-120,i,r),this.opacity)},displayable:function(){return(0&lt;=this.s&amp;&amp;this.s&lt;=1||isNaN(this.s))&amp;&amp;0&lt;=this.l&amp;&amp;this.l&lt;=1&amp;&amp;0&lt;=this.opacity&amp;&amp;this.opacity&lt;=1},formatHsl:function(){var e=this.opacity;return e=isNaN(e)?1:Math.max(0,Math.min(1,e)),(e===1?&quot;hsl(&quot;:&quot;hsla(&quot;)+(this.h||0)+&quot;, &quot;+(this.s||0)*100+&quot;%, &quot;+(this.l||0)*100+&quot;%&quot;+(e===1?&quot;)&quot;:&quot;, &quot;+e+&quot;)&quot;)}}));function xe(e,n,t){return(e&lt;60?n+(t-n)*e/60:e&lt;180?t:e&lt;240?n+(t-n)*(240-e)/60:n)*255}const be=e=&gt;()=&gt;e;function Yn(e,n){return function(t){return e+t*n}}function Zn(e,n,t){return e=Math.pow(e,t),n=Math.pow(n,t)-e,t=1/t,function(r){return Math.pow(e+r*n,t)}}function Jn(e){return(e=+e)==1?Ve:function(n,t){return t-n?Zn(n,t,e):be(isNaN(n)?t:n)}}function Ve(e,n){var t=n-e;return t?Yn(e,t):be(isNaN(e)?n:e)}const We=function e(n){var t=Jn(n);function r(i,f){var a=t((i=ge(i)).r,(f=ge(f)).r),o=t(i.g,f.g),u=t(i.b,f.b),l=Ve(i.opacity,f.opacity);return function(h){return i.r=a(h),i.g=o(h),i.b=u(h),i.opacity=l(h),i+&quot;&quot;}}return r.gamma=e,r}(1);function Kn(e,n){n||(n=[]);var t=e?Math.min(n.length,e.length):0,r=n.slice(),i;return function(f){for(i=0;i&lt;t;++i)r[i]=e[i]*(1-f)+n[i]*f;return r}}function Qn(e){return ArrayBuffer.isView(e)&amp;&amp;!(e instanceof DataView)}function et(e,n){var t=n?n.length:0,r=e?Math.min(t,e.length):0,i=new Array(r),f=new Array(t),a;for(a=0;a&lt;r;++a)i[a]=we(e[a],n[a]);for(;a&lt;t;++a)f[a]=n[a];return function(o){for(a=0;a&lt;r;++a)f[a]=i[a](o);return f}}function nt(e,n){var t=new Date;return e=+e,n=+n,function(r){return t.setTime(e*(1-r)+n*r),t}}function Z(e,n){return e=+e,n=+n,function(t){return e*(1-t)+n*t}}function tt(e,n){var t=</span><span class="si">{}</span><span class="s2">,r=</span><span class="si">{}</span><span class="s2">,i;(e===null||typeof e!=&quot;object&quot;)&amp;&amp;(e=</span><span class="si">{}</span><span class="s2">),(n===null||typeof n!=&quot;object&quot;)&amp;&amp;(n=</span><span class="si">{}</span><span class="s2">);for(i in n)i in e?t[i]=we(e[i],n[i]):r[i]=n[i];return function(f){for(i in t)r[i]=t[i](f);return r}}var pe=/[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,ye=new RegExp(pe.source,&quot;g&quot;);function rt(e){return function(){return e}}function it(e){return function(n){return e(n)+&quot;&quot;}}function at(e,n){var t=pe.lastIndex=ye.lastIndex=0,r,i,f,a=-1,o=[],u=[];for(e=e+&quot;&quot;,n=n+&quot;&quot;;(r=pe.exec(e))&amp;&amp;(i=ye.exec(n));)(f=i.index)&gt;t&amp;&amp;(f=n.slice(t,f),o[a]?o[a]+=f:o[++a]=f),(r=r[0])===(i=i[0])?o[a]?o[a]+=i:o[++a]=i:(o[++a]=null,u.push({i:a,x:Z(r,i)})),t=ye.lastIndex;return t&lt;n.length&amp;&amp;(f=n.slice(t),o[a]?o[a]+=f:o[++a]=f),o.length&lt;2?u[0]?it(u[0].x):rt(n):(n=u.length,function(l){for(var h=0,c;h&lt;n;++h)o[(c=u[h]).i]=c.x(l);return o.join(&quot;&quot;)})}function we(e,n){var t=typeof n,r;return n==null||t===&quot;boolean&quot;?be(n):(t===&quot;number&quot;?Z:t===&quot;string&quot;?(r=V(n))?(n=r,We):at:n instanceof V?We:n instanceof Date?nt:Qn(n)?Kn:Array.isArray(n)?et:typeof n.valueOf!=&quot;function&quot;&amp;&amp;typeof n.toString!=&quot;function&quot;||isNaN(n)?tt:Z)(e,n)}function ft(e,n){return e=+e,n=+n,function(t){return Math.round(e*(1-t)+n*t)}}function ot(e){return function(){return e}}function lt(e){return+e}var Xe=[0,1];function H(e){return e}function _e(e,n){return(n-=e=+e)?function(t){return(t-e)/n}:ot(isNaN(n)?NaN:.5)}function ut(e,n){var t;return e&gt;n&amp;&amp;(t=e,e=n,n=t),function(r){return Math.max(e,Math.min(n,r))}}function st(e,n,t){var r=e[0],i=e[1],f=n[0],a=n[1];return i&lt;r?(r=_e(i,r),f=t(a,f)):(r=_e(r,i),f=t(f,a)),function(o){return f(r(o))}}function ct(e,n,t){var r=Math.min(e.length,n.length)-1,i=new Array(r),f=new Array(r),a=-1;for(e[r]&lt;e[0]&amp;&amp;(e=e.slice().reverse(),n=n.slice().reverse());++a&lt;r;)i[a]=_e(e[a],e[a+1]),f[a]=t(n[a],n[a+1]);return function(o){var u=Cn(e,o,1,r)-1;return f[u](i[u](o))}}function ht(e,n){return n.domain(e.domain()).range(e.range()).interpolate(e.interpolate()).clamp(e.clamp()).unknown(e.unknown())}function dt(){var e=Xe,n=Xe,t=we,r,i,f,a=H,o,u,l;function h(){var s=Math.min(e.length,n.length);return a!==H&amp;&amp;(a=ut(e[0],e[s-1])),o=s&gt;2?ct:st,u=l=null,c}function c(s){return s==null||isNaN(s=+s)?f:(u||(u=o(e.map(r),n,t)))(r(a(s)))}return c.invert=function(s){return a(i((l||(l=o(n,e.map(r),Z)))(s)))},c.domain=function(s){return arguments.length?(e=Array.from(s,lt),h()):e.slice()},c.range=function(s){return arguments.length?(n=Array.from(s),h()):n.slice()},c.rangeRound=function(s){return n=Array.from(s),t=ft,h()},c.clamp=function(s){return arguments.length?(a=s?!0:H,h()):a!==H},c.interpolate=function(s){return arguments.length?(t=s,h()):t},c.unknown=function(s){return arguments.length?(f=s,c):f},function(s,p){return r=s,i=p,h()}}function gt(){return dt()(H,H)}function mt(e){return Math.abs(e=Math.round(e))&gt;=1e21?e.toLocaleString(&quot;en&quot;).replace(/,/g,&quot;&quot;):e.toString(10)}function J(e,n){if((t=(e=n?e.toExponential(n-1):e.toExponential()).indexOf(&quot;e&quot;))&lt;0)return null;var t,r=e.slice(0,t);return[r.length&gt;1?r[0]+r.slice(2):r,+e.slice(t+1)]}function F(e){return e=J(Math.abs(e)),e?e[1]:NaN}function xt(e,n){return function(t,r){for(var i=t.length,f=[],a=0,o=e[0],u=0;i&gt;0&amp;&amp;o&gt;0&amp;&amp;(u+o+1&gt;r&amp;&amp;(o=Math.max(1,r-u)),f.push(t.substring(i-=o,i+o)),!((u+=o+1)&gt;r));)o=e[a=(a+1)</span><span class="si">%e</span><span class="s2">.length];return f.reverse().join(n)}}function bt(e){return function(n){return n.replace(/[0-9]/g,function(t){return e[+t]})}}var pt=/^(?:(.)?([&lt;&gt;=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;function K(e){if(!(n=pt.exec(e)))throw new Error(&quot;invalid format: &quot;+e);var n;return new ve({fill:n[1],align:n[2],sign:n[3],symbol:n[4],zero:n[5],width:n[6],comma:n[7],precision:n[8]&amp;&amp;n[8].slice(1),trim:n[9],type:n[10]})}K.prototype=ve.prototype;function ve(e){this.fill=e.fill===void 0?&quot; &quot;:e.fill+&quot;&quot;,this.align=e.align===void 0?&quot;&gt;&quot;:e.align+&quot;&quot;,this.sign=e.sign===void 0?&quot;-&quot;:e.sign+&quot;&quot;,this.symbol=e.symbol===void 0?&quot;&quot;:e.symbol+&quot;&quot;,this.zero=!!e.zero,this.width=e.width===void 0?void 0:+e.width,this.comma=!!e.comma,this.precision=e.precision===void 0?void 0:+e.precision,this.trim=!!e.trim,this.type=e.type===void 0?&quot;&quot;:e.type+&quot;&quot;}ve.prototype.toString=function(){return this.fill+this.align+this.sign+this.symbol+(this.zero?&quot;0&quot;:&quot;&quot;)+(this.width===void 0?&quot;&quot;:Math.max(1,this.width|0))+(this.comma?&quot;,&quot;:&quot;&quot;)+(this.precision===void 0?&quot;&quot;:&quot;.&quot;+Math.max(0,this.precision|0))+(this.trim?&quot;~&quot;:&quot;&quot;)+this.type};function yt(e){e:for(var n=e.length,t=1,r=-1,i;t&lt;n;++t)switch(e[t]){case&quot;.&quot;:r=i=t;break;case&quot;0&quot;:r===0&amp;&amp;(r=t),i=t;break;default:if(!+e[t])break e;r&gt;0&amp;&amp;(r=0);break}return r&gt;0?e.slice(0,r)+e.slice(i+1):e}var Ue;function wt(e,n){var t=J(e,n);if(!t)return e+&quot;&quot;;var r=t[0],i=t[1],f=i-(Ue=Math.max(-8,Math.min(8,Math.floor(i/3)))*3)+1,a=r.length;return f===a?r:f&gt;a?r+new Array(f-a+1).join(&quot;0&quot;):f&gt;0?r.slice(0,f)+&quot;.&quot;+r.slice(f):&quot;0.&quot;+new Array(1-f).join(&quot;0&quot;)+J(e,Math.max(0,n+f-1))[0]}function Ye(e,n){var t=J(e,n);if(!t)return e+&quot;&quot;;var r=t[0],i=t[1];return i&lt;0?&quot;0.&quot;+new Array(-i).join(&quot;0&quot;)+r:r.length&gt;i+1?r.slice(0,i+1)+&quot;.&quot;+r.slice(i+1):r+new Array(i-r.length+2).join(&quot;0&quot;)}const Ze={&quot;%&quot;:(e,n)=&gt;(e*100).toFixed(n),b:e=&gt;Math.round(e).toString(2),c:e=&gt;e+&quot;&quot;,d:mt,e:(e,n)=&gt;e.toExponential(n),f:(e,n)=&gt;e.toFixed(n),g:(e,n)=&gt;e.toPrecision(n),o:e=&gt;Math.round(e).toString(8),p:(e,n)=&gt;Ye(e*100,n),r:Ye,s:wt,X:e=&gt;Math.round(e).toString(16).toUpperCase(),x:e=&gt;Math.round(e).toString(16)};function Je(e){return e}var Ke=Array.prototype.map,Qe=[&quot;y&quot;,&quot;z&quot;,&quot;a&quot;,&quot;f&quot;,&quot;p&quot;,&quot;n&quot;,&quot;</span><span class="se">\xB5</span><span class="s2">&quot;,&quot;m&quot;,&quot;&quot;,&quot;k&quot;,&quot;M&quot;,&quot;G&quot;,&quot;T&quot;,&quot;P&quot;,&quot;E&quot;,&quot;Z&quot;,&quot;Y&quot;];function _t(e){var n=e.grouping===void 0||e.thousands===void 0?Je:xt(Ke.call(e.grouping,Number),e.thousands+&quot;&quot;),t=e.currency===void 0?&quot;&quot;:e.currency[0]+&quot;&quot;,r=e.currency===void 0?&quot;&quot;:e.currency[1]+&quot;&quot;,i=e.decimal===void 0?&quot;.&quot;:e.decimal+&quot;&quot;,f=e.numerals===void 0?Je:bt(Ke.call(e.numerals,String)),a=e.percent===void 0?&quot;%&quot;:e.percent+&quot;&quot;,o=e.minus===void 0?&quot;</span><span class="se">\u2212</span><span class="s2">&quot;:e.minus+&quot;&quot;,u=e.nan===void 0?&quot;NaN&quot;:e.nan+&quot;&quot;;function l(c){c=K(c);var s=c.fill,p=c.align,m=c.sign,d=c.symbol,y=c.zero,g=c.width,_=c.comma,q=c.precision,cn=c.trim,v=c.type;v===&quot;n&quot;?(_=!0,v=&quot;g&quot;):Ze[v]||(q===void 0&amp;&amp;(q=12),cn=!0,v=&quot;g&quot;),(y||s===&quot;0&quot;&amp;&amp;p===&quot;=&quot;)&amp;&amp;(y=!0,s=&quot;0&quot;,p=&quot;=&quot;);var St=d===&quot;$&quot;?t:d===&quot;#&quot;&amp;&amp;/[boxX]/.test(v)?&quot;0&quot;+v.toLowerCase():&quot;&quot;,jt=d===&quot;$&quot;?r:/[%p]/.test(v)?a:&quot;&quot;,hn=Ze[v],Pt=/[defgprs%]/.test(v);q=q===void 0?6:/[gprs]/.test(v)?Math.max(1,Math.min(21,q)):Math.max(0,Math.min(20,q));function dn(b){var E=St,M=jt,O,gn,ee;if(v===&quot;c&quot;)M=hn(b)+M,b=&quot;&quot;;else{b=+b;var ne=b&lt;0||1/b&lt;0;if(b=isNaN(b)?u:hn(Math.abs(b),q),cn&amp;&amp;(b=yt(b)),ne&amp;&amp;+b==0&amp;&amp;m!==&quot;+&quot;&amp;&amp;(ne=!1),E=(ne?m===&quot;(&quot;?m:o:m===&quot;-&quot;||m===&quot;(&quot;?&quot;&quot;:m)+E,M=(v===&quot;s&quot;?Qe[8+Ue/3]:&quot;&quot;)+M+(ne&amp;&amp;m===&quot;(&quot;?&quot;)&quot;:&quot;&quot;),Pt){for(O=-1,gn=b.length;++O&lt;gn;)if(ee=b.charCodeAt(O),48&gt;ee||ee&gt;57){M=(ee===46?i+b.slice(O+1):b.slice(O))+M,b=b.slice(0,O);break}}}_&amp;&amp;!y&amp;&amp;(b=n(b,1/0));var te=E.length+b.length+M.length,A=te&lt;g?new Array(g-te+1).join(s):&quot;&quot;;switch(_&amp;&amp;y&amp;&amp;(b=n(A+b,A.length?g-M.length:1/0),A=&quot;&quot;),p){case&quot;&lt;&quot;:b=E+b+M+A;break;case&quot;=&quot;:b=E+A+b+M;break;case&quot;^&quot;:b=A.slice(0,te=A.length&gt;&gt;1)+E+b+M+A.slice(te);break;default:b=A+E+b+M;break}return f(b)}return dn.toString=function(){return c+&quot;&quot;},dn}function h(c,s){var p=l((c=K(c),c.type=&quot;f&quot;,c)),m=Math.max(-8,Math.min(8,Math.floor(F(s)/3)))*3,d=Math.pow(10,-m),y=Qe[8+m/3];return function(g){return p(d*g)+y}}return{format:l,formatPrefix:h}}var Q,en,nn;vt({thousands:&quot;,&quot;,grouping:[3],currency:[&quot;$&quot;,&quot;&quot;]});function vt(e){return Q=_t(e),en=Q.format,nn=Q.formatPrefix,Q}function Mt(e){return Math.max(0,-F(Math.abs(e)))}function kt(e,n){return Math.max(0,Math.max(-8,Math.min(8,Math.floor(F(n)/3)))*3-F(Math.abs(e)))}function Nt(e,n){return e=Math.abs(e),n=Math.abs(n)-e,Math.max(0,F(n)-F(e))+1}function Rt(e,n,t,r){var i=Fn(e,n,t),f;switch(r=K(r==null?&quot;,f&quot;:r),r.type){case&quot;s&quot;:{var a=Math.max(Math.abs(e),Math.abs(n));return r.precision==null&amp;&amp;!isNaN(f=kt(i,a))&amp;&amp;(r.precision=f),nn(r,a)}case&quot;&quot;:case&quot;e&quot;:case&quot;g&quot;:case&quot;p&quot;:case&quot;r&quot;:{r.precision==null&amp;&amp;!isNaN(f=Nt(i,Math.max(Math.abs(e),Math.abs(n))))&amp;&amp;(r.precision=f-(r.type===&quot;e&quot;));break}case&quot;f&quot;:case&quot;%&quot;:{r.precision==null&amp;&amp;!isNaN(f=Mt(i))&amp;&amp;(r.precision=f-(r.type===&quot;%&quot;)*2);break}}return en(r)}function At(e){var n=e.domain;return e.ticks=function(t){var r=n();return Hn(r[0],r[r.length-1],t==null?10:t)},e.tickFormat=function(t,r){var i=n();return Rt(i[0],i[i.length-1],t==null?10:t,r)},e.nice=function(t){t==null&amp;&amp;(t=10);var r=n(),i=0,f=r.length-1,a=r[i],o=r[f],u,l,h=10;for(o&lt;a&amp;&amp;(l=a,a=o,o=l,l=i,i=f,f=l);h-- &gt;0;){if(l=Pe(a,o,t),l===u)return r[i]=a,r[f]=o,n(r);if(l&gt;0)a=Math.floor(a/l)*l,o=Math.ceil(o/l)*l;else if(l&lt;0)a=Math.ceil(a*l)/l,o=Math.floor(o*l)/l;else break;u=l}return e},e}function tn(){var e=gt();return e.copy=function(){return ht(e,tn())},ce.apply(e,arguments),At(e)}const Ct=&quot;&quot;;function rn(e,n,t){const r=e.slice();return r[11]=n[t],r}function an(e,n,t){const r=e.slice();return r[14]=n[t],r}function fn(e,n,t){const r=e.slice();return r[14]=n[t],r}function on(e){let n,t,r=e[14]+&quot;&quot;,i,f;return{c(){n=$(&quot;g&quot;),t=$(&quot;text&quot;),i=X(r),x(t,&quot;class&quot;,&quot;axis-text svelte-1vd4qdl&quot;),x(t,&quot;x&quot;,&quot;-5&quot;),x(t,&quot;y&quot;,&quot;0&quot;),x(t,&quot;text-anchor&quot;,&quot;end&quot;),x(n,&quot;transform&quot;,f=`translate($</span><span class="si">{e[8].left}</span><span class="s2"> ${e[6](e[14])+e[6].bandwidth()/2})`),x(n,&quot;class&quot;,&quot;svelte-1vd4qdl&quot;)},m(a,o){B(a,n,o),R(n,t),R(t,i)},p(a,o){o&amp;64&amp;&amp;f!==(f=`translate($</span><span class="si">{a[8].left}</span><span class="s2"> ${a[6](a[14])+a[6].bandwidth()/2})`)&amp;&amp;x(n,&quot;transform&quot;,f)},d(a){a&amp;&amp;S(n)}}}function ln(e){let n,t,r=e[14]+&quot;&quot;,i,f;return{c(){n=$(&quot;g&quot;),t=$(&quot;text&quot;),i=X(r),x(t,&quot;class&quot;,&quot;axis-text svelte-1vd4qdl&quot;),x(t,&quot;y&quot;,&quot;15&quot;),x(t,&quot;text-anchor&quot;,&quot;middle&quot;),x(n,&quot;transform&quot;,f=`translate(${e[5](e[14])}, ${e[3]-e[8].bottom})`),x(n,&quot;class&quot;,&quot;svelte-1vd4qdl&quot;)},m(a,o){B(a,n,o),R(n,t),R(t,i)},p(a,o){o&amp;32&amp;&amp;r!==(r=a[14]+&quot;&quot;)&amp;&amp;yn(i,r),o&amp;40&amp;&amp;f!==(f=`translate(${a[5](a[14])}, ${a[3]-a[8].bottom})`)&amp;&amp;x(n,&quot;transform&quot;,f)},d(a){a&amp;&amp;S(n)}}}function un(e){let n,t,r,i,f,a,o=e[11].avgRank.toFixed(2)+&quot;&quot;,u,l,h;return{c(){n=$(&quot;rect&quot;),a=$(&quot;text&quot;),u=X(o),x(n,&quot;y&quot;,t=e[6](e[11].model)),x(n,&quot;x&quot;,e[8].left),x(n,&quot;width&quot;,r=e[5](e[11].avgRank)-e[8].left),x(n,&quot;height&quot;,i=e[6].bandwidth()),x(n,&quot;fill&quot;,f=e[4](e[11].model)),x(n,&quot;class&quot;,&quot;svelte-1vd4qdl&quot;),x(a,&quot;class&quot;,&quot;label-text svelte-1vd4qdl&quot;),x(a,&quot;y&quot;,l=e[6](e[11].model)+e[6].bandwidth()/2),x(a,&quot;x&quot;,h=e[5](e[11].avgRank)+5),x(a,&quot;text-anchor&quot;,&quot;start&quot;),x(a,&quot;dominant-baseline&quot;,&quot;middle&quot;)},m(c,s){B(c,n,s),B(c,a,s),R(a,u)},p(c,s){s&amp;64&amp;&amp;t!==(t=c[6](c[11].model))&amp;&amp;x(n,&quot;y&quot;,t),s&amp;32&amp;&amp;r!==(r=c[5](c[11].avgRank)-c[8].left)&amp;&amp;x(n,&quot;width&quot;,r),s&amp;64&amp;&amp;i!==(i=c[6].bandwidth())&amp;&amp;x(n,&quot;height&quot;,i),s&amp;16&amp;&amp;f!==(f=c[4](c[11].model))&amp;&amp;x(n,&quot;fill&quot;,f),s&amp;64&amp;&amp;l!==(l=c[6](c[11].model)+c[6].bandwidth()/2)&amp;&amp;x(a,&quot;y&quot;,l),s&amp;32&amp;&amp;h!==(h=c[5](c[11].avgRank)+5)&amp;&amp;x(a,&quot;x&quot;,h)},d(c){c&amp;&amp;S(n),c&amp;&amp;S(a)}}}function $t(e){let n,t,r,i,f,a,o,u,l=e[7].map(sn),h=[];for(let d=0;d&lt;l.length;d+=1)h[d]=on(fn(e,l,d));let c=e[5].ticks(),s=[];for(let d=0;d&lt;c.length;d+=1)s[d]=ln(an(e,c,d));let p=e[7],m=[];for(let d=0;d&lt;p.length;d+=1)m[d]=un(rn(e,p,d));return{c(){n=bn(&quot;div&quot;),t=$(&quot;svg&quot;);for(let d=0;d&lt;h.length;d+=1)h[d].c();r=Ae();for(let d=0;d&lt;s.length;d+=1)s[d].c();i=Ae();for(let d=0;d&lt;m.length;d+=1)m[d].c();f=$(&quot;line&quot;),x(f,&quot;class&quot;,&quot;axis-line svelte-1vd4qdl&quot;),x(f,&quot;x1&quot;,e[8].left),x(f,&quot;x2&quot;,a=e[2]-e[8].right),x(f,&quot;y1&quot;,o=e[3]-e[8].bottom),x(f,&quot;y2&quot;,u=e[3]-e[8].bottom),x(t,&quot;width&quot;,e[1]),x(t,&quot;height&quot;,e[0]),x(t,&quot;class&quot;,&quot;svelte-1vd4qdl&quot;),x(n,&quot;id&quot;,&quot;bar-chart-holder&quot;),x(n,&quot;width&quot;,e[1]),x(n,&quot;height&quot;,e[0]),x(n,&quot;class&quot;,&quot;svelte-1vd4qdl&quot;)},m(d,y){B(d,n,y),R(n,t);for(let g=0;g&lt;h.length;g+=1)h[g]&amp;&amp;h[g].m(t,null);R(t,r);for(let g=0;g&lt;s.length;g+=1)s[g]&amp;&amp;s[g].m(t,null);R(t,i);for(let g=0;g&lt;m.length;g+=1)m[g]&amp;&amp;m[g].m(t,null);R(t,f)},p(d,[y]){if(y&amp;448){l=d[7].map(sn);let g;for(g=0;g&lt;l.length;g+=1){const _=fn(d,l,g);h[g]?h[g].p(_,y):(h[g]=on(_),h[g].c(),h[g].m(t,r))}for(;g&lt;h.length;g+=1)h[g].d(1);h.length=l.length}if(y&amp;296){c=d[5].ticks();let g;for(g=0;g&lt;c.length;g+=1){const _=an(d,c,g);s[g]?s[g].p(_,y):(s[g]=ln(_),s[g].c(),s[g].m(t,i))}for(;g&lt;s.length;g+=1)s[g].d(1);s.length=c.length}if(y&amp;496){p=d[7];let g;for(g=0;g&lt;p.length;g+=1){const _=rn(d,p,g);m[g]?m[g].p(_,y):(m[g]=un(_),m[g].c(),m[g].m(t,f))}for(;g&lt;m.length;g+=1)m[g].d(1);m.length=p.length}y&amp;4&amp;&amp;a!==(a=d[2]-d[8].right)&amp;&amp;x(f,&quot;x2&quot;,a),y&amp;8&amp;&amp;o!==(o=d[3]-d[8].bottom)&amp;&amp;x(f,&quot;y1&quot;,o),y&amp;8&amp;&amp;u!==(u=d[3]-d[8].bottom)&amp;&amp;x(f,&quot;y2&quot;,u),y&amp;2&amp;&amp;x(t,&quot;width&quot;,d[1]),y&amp;1&amp;&amp;x(t,&quot;height&quot;,d[0]),y&amp;2&amp;&amp;x(n,&quot;width&quot;,d[1]),y&amp;1&amp;&amp;x(n,&quot;height&quot;,d[0])},i:z,o:z,d(d){d&amp;&amp;S(n),re(h,d),re(s,d),re(m,d)}}}const sn=e=&gt;e.model;function qt(e,n,t){let r,i,f,a,o,{data:u}=n,</span><span class="si">{height:l=400}</span><span class="s2">=n,</span><span class="si">{width:h=700}</span><span class="s2">=n;const c=u.reduce((m,d)=&gt;(m[d.model]?(m[d.model].sum+=d.latency,m[d.model].count++):m[d.model]={sum:d.latency,count:1},m),</span><span class="si">{}</span><span class="s2">),s=Object.keys(c).map(m=&gt;({model:m,avgRank:c[m].sum/c[m].count}));let p={top:20,bottom:20,left:175,right:20};return e.$$set=m=&gt;{&quot;data&quot;in m&amp;&amp;t(9,u=m.data),&quot;height&quot;in m&amp;&amp;t(0,l=m.height),&quot;width&quot;in m&amp;&amp;t(1,h=m.width)},e.$$.update=()=&gt;{e.$$.dirty&amp;2&amp;&amp;t(2,r=h-p.left-p.right),e.$$.dirty&amp;1&amp;&amp;t(3,i=l-p.top-p.bottom),e.$$.dirty&amp;8&amp;&amp;t(6,f=Ce().rangeRound([p.top,i-p.bottom]).padding(.05).domain(s.map(m=&gt;m.model))),e.$$.dirty&amp;4&amp;&amp;t(5,a=tn().rangeRound([p.left,r-p.right]).domain([0,Sn(s,m=&gt;m.avgRank)]))},t(4,o=he().domain(s.map(m=&gt;m.model)).range([&quot;#FF5470&quot;,&quot;#1B2D45&quot;,&quot;#00EBC7&quot;,&quot;#FDE24F&quot;])),[l,h,r,i,o,a,f,s,p,u]}class Et extends En{constructor(n){super(),qn(this,n,qt,$t,mn,{data:9,height:0,width:1})}}return Et}();</span>
+<span class="s2">&lt;/script&gt;&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">div_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomize_hash_id</span><span class="p">()</span>
+        <span class="c1"># self.props = get_svelte_props(self.name)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markup</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<div class="viewcode-block" id="Barchart.add_params"><a class="viewcode-back" href="../../../pykoi.interactives.html#pykoi.interactives.barchart.Barchart.add_params">[docs]</a>    <span class="k">def</span> <span class="nf">add_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add parameters to the component.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        params : dict</span>
+<span class="sd">            The parameters to add to the component.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">js_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markup</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;div id=&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">div_id</span><span class="si">}</span><span class="s2">&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">        (() =&gt; </span><span class="se">{{</span>
+<span class="s2">            var data = </span><span class="si">{</span><span class="n">js_data</span><span class="si">}</span><span class="s2">;</span>
+<span class="s2">            window.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_data = data;</span>
+<span class="s2">            var </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_inst = new </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">(</span><span class="se">{{</span>
+<span class="s2">                &quot;target&quot;: document.getElementById(&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">div_id</span><span class="si">}</span><span class="s2">&quot;),</span>
+<span class="s2">                &quot;props&quot;: data</span>
+<span class="s2">            </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">        </span><span class="se">}}</span><span class="s2">)();</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="Barchart.randomize_hash_id"><a class="viewcode-back" href="../../../pykoi.interactives.html#pykoi.interactives.barchart.Barchart.randomize_hash_id">[docs]</a>    <span class="k">def</span> <span class="nf">randomize_hash_id</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a random hash for div id for a component.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The name of the component. E.g. &#39;BarChart&#39;.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The generated hash ID.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">random_hex_id</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="n">hashed_div_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">random_hex_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">hashed_div_id</span></div>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the component as an HTML string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iife_script</span><span class="si">}</span>
+<span class="s2">        </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">markup</span><span class="si">}</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Barchart&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call the component with the given kwargs.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        kwargs : any</span>
+<span class="sd">            The kwargs to pass to the component.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Barchart</span>
+<span class="sd">            A python class representing the svelte component, renderable in Jupyter.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># render with given arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_params</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, CambioML
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/CambioML/pykoi" aria-label="Website">
+                <svg width="447" height="425" viewBox="0 0 447 425" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M436 212.5C436 323.269 341.39 414 223.5 414C105.61 414 11 323.269 11 212.5C11 101.731 105.61 11 223.5 11C341.39 11 436 101.731 436 212.5Z" stroke="#393939" stroke-width="22"/>
+                    <rect x="118" y="148" width="40" height="42.2633" rx="20" fill="#393939"/>
+                    <rect x="210" y="148" width="40" height="42.2633" rx="20" fill="#393939"/>
+                    <rect x="302" y="148" width="40" height="40" rx="20" fill="#393939"/>
+                    <path d="M184.646 212C184.646 212 171.914 285 259.488 285C347.062 285 357 212 357 212" stroke="#393939" stroke-width="22" stroke-linecap="round"/>
+                    <path d="M97.6462 212C97.6462 212 84.9137 285 172.488 285C260.062 285 270 212 270 212" stroke="#393939" stroke-width="22" stroke-linecap="round"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/CambioML/pykoi" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=525cde36"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

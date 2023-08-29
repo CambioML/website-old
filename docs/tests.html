@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>tests package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
@@ -290,11 +304,88 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="tests-test-application-module">
-<h2>tests.test_application module<a class="headerlink" href="#tests-test-application-module" title="Permalink to this heading">#</a></h2>
+<section id="module-tests.test_application">
+<span id="tests-test-application-module"></span><h2>tests.test_application module<a class="headerlink" href="#module-tests.test_application" title="Permalink to this heading">#</a></h2>
+<p>Test the Application class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_application.TestApplication">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_application.</span></span><span class="sig-name descname"><span class="pre">TestApplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_application.html#TestApplication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_application.TestApplication" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Unit test class for the Application class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_application.TestApplication.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_application.html#TestApplication.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_application.TestApplication.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_application.TestApplication.test_add_component">
+<span class="sig-name descname"><span class="pre">test_add_component</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_application.html#TestApplication.test_add_component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_application.TestApplication.test_add_component" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests adding a component to the application.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="tests-test-state-module">
-<h2>tests.test_state module<a class="headerlink" href="#tests-test-state-module" title="Permalink to this heading">#</a></h2>
+<section id="module-tests.test_state">
+<span id="tests-test-state-module"></span><h2>tests.test_state module<a class="headerlink" href="#module-tests.test_state" title="Permalink to this heading">#</a></h2>
+<p>Tests for the State class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_state.TestState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_state.</span></span><span class="sig-name descname"><span class="pre">TestState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestState" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Unit test class for the State class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestState.test_call_method">
+<span class="sig-name descname"><span class="pre">test_call_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestState.test_call_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestState.test_call_method" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests calling a method from the state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestState.test_get_attribute">
+<span class="sig-name descname"><span class="pre">test_get_attribute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestState.test_get_attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestState.test_get_attribute" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests getting an attribute from the state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestState.test_get_non_existing_attribute">
+<span class="sig-name descname"><span class="pre">test_get_non_existing_attribute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestState.test_get_non_existing_attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestState.test_get_non_existing_attribute" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests getting a non-existing attribute from the state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestState.test_set_attribute">
+<span class="sig-name descname"><span class="pre">test_set_attribute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestState.test_set_attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestState.test_set_attribute" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests setting an attribute in the state.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_state.TestStore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_state.</span></span><span class="sig-name descname"><span class="pre">TestStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestStore" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Unit test class for the Store class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestStore.test_decrement">
+<span class="sig-name descname"><span class="pre">test_decrement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestStore.test_decrement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestStore.test_decrement" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests decrementing the count.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestStore.test_hello">
+<span class="sig-name descname"><span class="pre">test_hello</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestStore.test_hello"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestStore.test_hello" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests the hello method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_state.TestStore.test_increment">
+<span class="sig-name descname"><span class="pre">test_increment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_state.html#TestStore.test_increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_state.TestStore.test_increment" title="Permalink to this definition">#</a></dt>
+<dd><p>Tests incrementing the count.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-tests">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tests" title="Permalink to this heading">#</a></h2>
@@ -376,8 +467,30 @@
 <li><a class="reference internal" href="#">tests package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#tests-test-application-module">tests.test_application module</a></li>
-<li><a class="reference internal" href="#tests-test-state-module">tests.test_state module</a></li>
+<li><a class="reference internal" href="#module-tests.test_application">tests.test_application module</a><ul>
+<li><a class="reference internal" href="#tests.test_application.TestApplication"><code class="docutils literal notranslate"><span class="pre">TestApplication</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_application.TestApplication.setUp"><code class="docutils literal notranslate"><span class="pre">TestApplication.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_application.TestApplication.test_add_component"><code class="docutils literal notranslate"><span class="pre">TestApplication.test_add_component()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tests.test_state">tests.test_state module</a><ul>
+<li><a class="reference internal" href="#tests.test_state.TestState"><code class="docutils literal notranslate"><span class="pre">TestState</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_state.TestState.test_call_method"><code class="docutils literal notranslate"><span class="pre">TestState.test_call_method()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_state.TestState.test_get_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_get_attribute()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_state.TestState.test_get_non_existing_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_get_non_existing_attribute()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_state.TestState.test_set_attribute"><code class="docutils literal notranslate"><span class="pre">TestState.test_set_attribute()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tests.test_state.TestStore"><code class="docutils literal notranslate"><span class="pre">TestStore</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_state.TestStore.test_decrement"><code class="docutils literal notranslate"><span class="pre">TestStore.test_decrement()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_state.TestStore.test_hello"><code class="docutils literal notranslate"><span class="pre">TestStore.test_hello()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_state.TestStore.test_increment"><code class="docutils literal notranslate"><span class="pre">TestStore.test_increment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-tests">Module contents</a></li>
 </ul>
 </li>

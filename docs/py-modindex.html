@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 --><title>Python Module Index - pykoi 0.0.0 documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -25,12 +25,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -146,6 +154,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -166,6 +178,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul>
@@ -246,7 +260,13 @@
     <td><img src="_static/minus.png" class="toggler"
               id="toggle-1" style="display: none" alt="-" /></td>
     <td>
-        <code class="xref">pykoi</code></td><td>
+        <a href="pykoi.html#module-pykoi"><code class="xref">pykoi</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="pykoi.html#module-pykoi.application"><code class="xref">pykoi.application</code></a></td><td>
     <em></em></td>
   </tr>
   <tr class="cg-1">
@@ -366,6 +386,30 @@
   <tr class="cg-1">
     <td></td>
     <td>&#160;&#160;&#160;
+        <a href="pykoi.interactives.html#module-pykoi.interactives"><code class="xref">pykoi.interactives</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="pykoi.interactives.html#module-pykoi.interactives.barchart"><code class="xref">pykoi.interactives.barchart</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="pykoi.rlhf.html#module-0"><code class="xref">pykoi.rlhf</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="pykoi.html#module-pykoi.state"><code class="xref">pykoi.state</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
         <a href="pykoi.telemetry.html#module-pykoi.telemetry"><code class="xref">pykoi.telemetry</code></a></td><td>
     <em></em></td>
   </tr>
@@ -373,6 +417,12 @@
     <td></td>
     <td>&#160;&#160;&#160;
         <a href="pykoi.telemetry.html#module-pykoi.telemetry.events"><code class="xref">pykoi.telemetry.events</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="pykoi.telemetry.html#module-pykoi.telemetry.telemetry"><code class="xref">pykoi.telemetry.telemetry</code></a></td><td>
     <em></em></td>
   </tr>
   <tr class="pcap">
@@ -452,6 +502,18 @@
     <td></td>
     <td>&#160;&#160;&#160;
         <a href="tests.component.html#module-tests.component.test_base"><code class="xref">tests.component.test_base</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-2">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="tests.html#module-tests.test_application"><code class="xref">tests.test_application</code></a></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-2">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="tests.html#module-tests.test_state"><code class="xref">tests.test_state</code></a></td><td>
     <em></em></td>
   </tr>
 </table>

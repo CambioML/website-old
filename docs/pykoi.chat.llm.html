@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>pykoi.chat.llm package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
@@ -321,6 +335,25 @@ It ensures that all subclasses implement the <cite>predict</cite> method.</p>
 <dd><p>Bases: <a class="reference internal" href="#pykoi.chat.llm.abs_llm.AbsLlm" title="pykoi.chat.llm.abs_llm.AbsLlm"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbsLlm</span></code></a></p>
 <p>This class is a wrapper for the Huggingface model for Language Model (LLM) Chain.
 It inherits from the abstract base class AbsLlm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.chat.llm.huggingface.HuggingfaceModel.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/chat/llm/huggingface.html#HuggingfaceModel.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.create" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize the Huggingface model with given model and tokenizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Pre-loaded model instance from Huggingface.</p></li>
+<li><p><strong>tokenizer</strong> – Pre-loaded tokenizer instance from Huggingface.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the model</p></li>
+<li><p><strong>max_length</strong> (<em>int</em>) – The maximum length for the model. Default is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An instance of HuggingfaceModel.</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pykoi.chat.llm.huggingface.HuggingfaceModel.model_source">
 <span class="sig-name descname"><span class="pre">model_source</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'huggingface'</span></em><a class="headerlink" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.model_source" title="Permalink to this definition">#</a></dt>
@@ -721,6 +754,7 @@ source.</p>
 </li>
 <li><a class="reference internal" href="#module-pykoi.chat.llm.huggingface">pykoi.chat.llm.huggingface module</a><ul>
 <li><a class="reference internal" href="#pykoi.chat.llm.huggingface.HuggingfaceModel"><code class="docutils literal notranslate"><span class="pre">HuggingfaceModel</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.create"><code class="docutils literal notranslate"><span class="pre">HuggingfaceModel.create()</span></code></a></li>
 <li><a class="reference internal" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.model_source"><code class="docutils literal notranslate"><span class="pre">HuggingfaceModel.model_source</span></code></a></li>
 <li><a class="reference internal" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.name"><code class="docutils literal notranslate"><span class="pre">HuggingfaceModel.name</span></code></a></li>
 <li><a class="reference internal" href="#pykoi.chat.llm.huggingface.HuggingfaceModel.predict"><code class="docutils literal notranslate"><span class="pre">HuggingfaceModel.predict()</span></code></a></li>

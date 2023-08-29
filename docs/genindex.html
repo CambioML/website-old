@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 --><title>Index - pykoi 0.0.0 documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -25,12 +25,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -146,6 +154,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -166,6 +178,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul>
@@ -233,7 +247,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
 </section>
 <section id="_" class="genindex-section">
   <h2>_</h2>
@@ -245,13 +259,19 @@
 </li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.openai.OpenAIModel._max_tokens">_max_tokens (pykoi.chat.llm.openai.OpenAIModel attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel._model">_model (pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.openai.OpenAIModel._temperature">_temperature (pykoi.chat.llm.openai.OpenAIModel attribute)</a>
 </li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel._tokenizer">_tokenizer (pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel attribute)</a>
+</li>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._unknown">_unknown (pykoi.telemetry.telemetry.Telemetry attribute)</a>
+</li>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._user_id">_user_id (pykoi.telemetry.telemetry.Telemetry attribute)</a>
+</li>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry._user_id_path">_user_id_path (pykoi.telemetry.telemetry.Telemetry attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -265,11 +285,33 @@
 </li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm">AbsLlm (class in pykoi.chat.llm.abs_llm)</a>
 </li>
+        <li><a href="pykoi.html#pykoi.application.Application.add_component">add_component() (pykoi.application.Application method)</a>
+</li>
+        <li><a href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart.add_params">add_params() (pykoi.interactives.barchart.Barchart method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.ModelAnswer.answer">answer (pykoi.application.ModelAnswer attribute)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.Application">Application (class in pykoi.application)</a>
+</li>
         <li><a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent">AppStartEvent (class in pykoi.telemetry.events)</a>
 </li>
         <li><a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStopEvent">AppStopEvent (class in pykoi.telemetry.events)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.auth_required">auth_required() (pykoi.application.Application method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.authenticate_user">authenticate_user() (pykoi.application.Application method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart">Barchart (class in pykoi.interactives.barchart)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -279,6 +321,8 @@
   <h2>C</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.capture">capture() (pykoi.telemetry.telemetry.Telemetry method)</a>
+</li>
         <li><a href="pykoi.component.html#pykoi.component.base.Chatbot">Chatbot (class in pykoi.component.base)</a>
 </li>
         <li><a href="pykoi.component.html#pykoi.component.chatbot_database_factory.ChatbotDatabaseFactory">ChatbotDatabaseFactory (class in pykoi.component.chatbot_database_factory)</a>
@@ -295,17 +339,37 @@
 </li>
         <li><a href="tests.component.html#tests.component.test_base.TestComponent.comp">comp (tests.component.test_base.TestComponent attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.comparator_database.ComparatorDatabase">ComparatorDatabase (class in pykoi.chat.db.comparator_database)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.ComparatorInsertRequest">ComparatorInsertRequest (class in pykoi.application)</a>
 </li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.comparator_database.ComparatorQuestionDatabase">ComparatorQuestionDatabase (class in pykoi.chat.db.comparator_database)</a>
 </li>
         <li><a href="pykoi.component.html#pykoi.component.base.Component">Component (class in pykoi.component.base)</a>
 </li>
-        <li><a href="pykoi.component.html#pykoi.component.chatbot_database_factory.ChatbotDatabaseFactory.create">create() (pykoi.component.chatbot_database_factory.ChatbotDatabaseFactory static method)</a>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.context">context (pykoi.telemetry.telemetry.Telemetry property)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.state.Store.count">count (pykoi.state.Store attribute)</a>
+</li>
+        <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.huggingface.HuggingfaceModel.create">create() (pykoi.chat.llm.huggingface.HuggingfaceModel class method)</a>
+
+        <ul>
+          <li><a href="pykoi.component.html#pykoi.component.chatbot_database_factory.ChatbotDatabaseFactory.create">(pykoi.component.chatbot_database_factory.ChatbotDatabaseFactory static method)</a>
+</li>
+        </ul></li>
+        <li><a href="pykoi.html#pykoi.application.Application.create_chatbot_comparator_route">create_chatbot_comparator_route() (pykoi.application.Application method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.create_chatbot_route">create_chatbot_route() (pykoi.application.Application method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.create_feedback_route">create_feedback_route() (pykoi.application.Application method)</a>
 </li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.model_factory.ModelFactory.create_model">create_model() (pykoi.chat.llm.model_factory.ModelFactory static method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.create_nvml_route">create_nvml_route() (pykoi.application.Application method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.create_qa_retrieval_route">create_qa_retrieval_route() (pykoi.application.Application method)</a>
 </li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.create_table">create_table() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
@@ -325,6 +389,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.component.html#pykoi.component.base.Dashboard">Dashboard (class in pykoi.component.base)</a>
 </li>
+        <li><a href="pykoi.html#pykoi.application.ComparatorInsertRequest.data">data (pykoi.application.ComparatorInsertRequest attribute)</a>
+</li>
         <li><a href="pykoi.component.html#pykoi.component.base.Component.data_source">data_source (pykoi.component.base.Component attribute)</a>
 </li>
         <li><a href="pykoi.component.html#pykoi.component.base.Chatbot.database">database (pykoi.component.base.Chatbot attribute)</a>
@@ -335,17 +401,23 @@
         </ul></li>
         <li><a href="pykoi.component.html#pykoi.component.base.DataSource">DataSource (class in pykoi.component.base)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.telemetry.html#id1">date_time (pykoi.telemetry.events.AppStartEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent.date_time">[1]</a>
 
         <ul>
           <li><a href="pykoi.telemetry.html#id7">(pykoi.telemetry.events.AppStopEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStopEvent.date_time">[1]</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.state.Store.decrement">decrement() (pykoi.state.Store method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.display">display() (pykoi.application.Application method)</a>
+</li>
         <li><a href="pykoi.component.html#pykoi.component.base.Dropdown">Dropdown (class in pykoi.component.base)</a>
 </li>
         <li><a href="tests.component.html#tests.component.test_base.TestDataSource.ds">ds (tests.component.test_base.TestDataSource attribute)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.Application.dummy_auth">dummy_auth() (pykoi.application.Application method)</a>
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_abs_llm.DummyLlm">DummyLlm (class in tests.chat.llm.test_abs_llm)</a>
 </li>
@@ -387,6 +459,8 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.Application.get_auth_dependency">get_auth_dependency() (pykoi.application.Application method)</a>
+</li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.get_connection">get_connection() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
         <ul>
@@ -395,6 +469,8 @@
           <li><a href="pykoi.chat.db.html#pykoi.chat.db.ranking_database.RankingDatabase.get_connection">(pykoi.chat.db.ranking_database.RankingDatabase method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.get_cursor">get_cursor() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
         <ul>
@@ -403,8 +479,6 @@
           <li><a href="pykoi.chat.db.html#pykoi.chat.db.ranking_database.RankingDatabase.get_cursor">(pykoi.chat.db.ranking_database.RankingDatabase method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.instruct_pipeline.get_special_token_id">get_special_token_id() (in module pykoi.chat.llm.instruct_pipeline)</a>
 </li>
         <li><a href="pykoi.telemetry.html#id2">gpu (pykoi.telemetry.events.AppStartEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent.gpu">[1]</a>
@@ -417,10 +491,12 @@
   <h2>H</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.constants.ModelSource.HUGGINGFACE">HUGGINGFACE (pykoi.chat.llm.constants.ModelSource attribute)</a>
+        <li><a href="pykoi.html#pykoi.state.Store.hello">hello() (pykoi.state.Store method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.constants.ModelSource.HUGGINGFACE">HUGGINGFACE (pykoi.chat.llm.constants.ModelSource attribute)</a>
+</li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.huggingface.HuggingfaceModel">HuggingfaceModel (class in pykoi.chat.llm.huggingface)</a>
 </li>
     </ul></td>
@@ -431,14 +507,22 @@
   <h2>I</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="pykoi.component.html#pykoi.component.base.Component.id">id (pykoi.component.base.Component attribute)</a>
+        <li><a href="pykoi.html#pykoi.application.UpdateQATable.id">id (pykoi.application.UpdateQATable attribute)</a>
 
         <ul>
+          <li><a href="pykoi.component.html#pykoi.component.base.Component.id">(pykoi.component.base.Component attribute)</a>
+</li>
           <li><a href="pykoi.component.html#pykoi.component.base.DataSource.id">(pykoi.component.base.DataSource attribute)</a>
 </li>
         </ul></li>
         <li><a href="pykoi.telemetry.html#pykoi.telemetry.events.identify_cloud_provider">identify_cloud_provider() (in module pykoi.telemetry.events)</a>
 </li>
+        <li><a href="pykoi.html#pykoi.state.Store.increment">increment() (pykoi.state.Store method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.InferenceRankingTable">InferenceRankingTable (class in pykoi.application)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.insert">insert() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
         <ul>
@@ -447,8 +531,6 @@
           <li><a href="pykoi.chat.db.html#pykoi.chat.db.comparator_database.ComparatorQuestionDatabase.insert">(pykoi.chat.db.comparator_database.ComparatorQuestionDatabase method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.qa_database.QuestionAnswerDatabase.insert_question_answer">insert_question_answer() (pykoi.chat.db.qa_database.QuestionAnswerDatabase method)</a>
 </li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.ranking_database.RankingDatabase.insert_ranking">insert_ranking() (pykoi.chat.db.ranking_database.RankingDatabase method)</a>
@@ -459,12 +541,26 @@
   </tr></table>
 </section>
 
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.RankingTableUpdate.low_ranking_answer">low_ranking_answer (pykoi.application.RankingTableUpdate attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="M" class="genindex-section">
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="pykoi.component.html#pykoi.component.base.Chatbot.model">model (pykoi.component.base.Chatbot attribute)</a>
+        <li><a href="pykoi.html#pykoi.application.ModelAnswer.model">model (pykoi.application.ModelAnswer attribute)</a>
+
+        <ul>
+          <li><a href="pykoi.component.html#pykoi.component.base.Chatbot.model">(pykoi.component.base.Chatbot attribute)</a>
 </li>
+        </ul></li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.huggingface.HuggingfaceModel.model_source">model_source (pykoi.chat.llm.huggingface.HuggingfaceModel attribute)</a>
 
         <ul>
@@ -473,6 +569,8 @@
           <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel.model_source">(pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel attribute)</a>
 </li>
         </ul></li>
+        <li><a href="pykoi.html#pykoi.application.ModelAnswer">ModelAnswer (class in pykoi.application)</a>
+</li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.model_factory.ModelFactory">ModelFactory (class in pykoi.chat.llm.model_factory)</a>
 </li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.constants.ModelSource">ModelSource (class in pykoi.chat.llm.constants)</a>
@@ -481,6 +579,10 @@
     module
 
         <ul>
+          <li><a href="pykoi.html#module-pykoi">pykoi</a>
+</li>
+          <li><a href="pykoi.html#module-pykoi.application">pykoi.application</a>
+</li>
           <li><a href="pykoi.chat.html#module-pykoi.chat">pykoi.chat</a>
 </li>
           <li><a href="pykoi.chat.db.html#module-pykoi.chat.db">pykoi.chat.db</a>
@@ -519,9 +621,19 @@
 </li>
           <li><a href="pykoi.component.html#module-pykoi.component.constants">pykoi.component.constants</a>
 </li>
+          <li><a href="pykoi.interactives.html#module-pykoi.interactives">pykoi.interactives</a>
+</li>
+          <li><a href="pykoi.interactives.html#module-pykoi.interactives.barchart">pykoi.interactives.barchart</a>
+</li>
+          <li><a href="pykoi.rlhf.html#module-0">pykoi.rlhf</a>, <a href="pykoi.rlhf.html#module-pykoi.rlhf">[1]</a>
+</li>
+          <li><a href="pykoi.html#module-pykoi.state">pykoi.state</a>
+</li>
           <li><a href="pykoi.telemetry.html#module-pykoi.telemetry">pykoi.telemetry</a>
 </li>
           <li><a href="pykoi.telemetry.html#module-pykoi.telemetry.events">pykoi.telemetry.events</a>
+</li>
+          <li><a href="pykoi.telemetry.html#module-pykoi.telemetry.telemetry">pykoi.telemetry.telemetry</a>
 </li>
           <li><a href="tests.html#module-tests">tests</a>
 </li>
@@ -547,6 +659,10 @@
 </li>
           <li><a href="tests.component.html#module-tests.component.test_base">tests.component.test_base</a>
 </li>
+          <li><a href="tests.html#module-tests.test_application">tests.test_application</a>
+</li>
+          <li><a href="tests.html#module-tests.test_state">tests.test_state</a>
+</li>
         </ul></li>
     </ul></td>
   </tr></table>
@@ -556,6 +672,8 @@
   <h2>N</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.InferenceRankingTable.n">n (pykoi.application.InferenceRankingTable attribute)</a>
+</li>
         <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.name">name (pykoi.chat.llm.abs_llm.AbsLlm property)</a>
 
         <ul>
@@ -564,6 +682,8 @@
           <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.openai.OpenAIModel.name">(pykoi.chat.llm.openai.OpenAIModel property)</a>
 </li>
           <li><a href="pykoi.chat.llm.html#pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel.name">(pykoi.chat.llm.peft_huggingface.PeftHuggingfacemodel property)</a>
+</li>
+          <li><a href="pykoi.html#pykoi.state.Store.name">(pykoi.state.Store attribute)</a>
 </li>
           <li><a href="pykoi.telemetry.html#id3">(pykoi.telemetry.events.AppStartEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent.name">[1]</a>
 </li>
@@ -635,6 +755,20 @@
         <li><a href="pykoi.component.html#pykoi.component.base.Component.props">props (pykoi.component.base.Component attribute)</a>
 </li>
         <li>
+    pykoi
+
+        <ul>
+          <li><a href="pykoi.html#module-pykoi">module</a>
+</li>
+        </ul></li>
+        <li>
+    pykoi.application
+
+        <ul>
+          <li><a href="pykoi.html#module-pykoi.application">module</a>
+</li>
+        </ul></li>
+        <li>
     pykoi.chat
 
         <ul>
@@ -683,8 +817,6 @@
           <li><a href="pykoi.chat.db.html#module-pykoi.chat.db.ranking_database">module</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     pykoi.chat.llm
 
@@ -692,6 +824,8 @@
           <li><a href="pykoi.chat.llm.html#module-pykoi.chat.llm">module</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     pykoi.chat.llm.abs_llm
 
@@ -770,6 +904,34 @@
 </li>
         </ul></li>
         <li>
+    pykoi.interactives
+
+        <ul>
+          <li><a href="pykoi.interactives.html#module-pykoi.interactives">module</a>
+</li>
+        </ul></li>
+        <li>
+    pykoi.interactives.barchart
+
+        <ul>
+          <li><a href="pykoi.interactives.html#module-pykoi.interactives.barchart">module</a>
+</li>
+        </ul></li>
+        <li>
+    pykoi.rlhf
+
+        <ul>
+          <li><a href="pykoi.rlhf.html#module-0">module</a>, <a href="pykoi.rlhf.html#module-pykoi.rlhf">[1]</a>
+</li>
+        </ul></li>
+        <li>
+    pykoi.state
+
+        <ul>
+          <li><a href="pykoi.html#module-pykoi.state">module</a>
+</li>
+        </ul></li>
+        <li>
     pykoi.telemetry
 
         <ul>
@@ -783,6 +945,13 @@
           <li><a href="pykoi.telemetry.html#module-pykoi.telemetry.events">module</a>
 </li>
         </ul></li>
+        <li>
+    pykoi.telemetry.telemetry
+
+        <ul>
+          <li><a href="pykoi.telemetry.html#module-pykoi.telemetry.telemetry">module</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -791,6 +960,12 @@
   <h2>Q</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.ModelAnswer.qid">qid (pykoi.application.ModelAnswer attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.RankingTableUpdate.question">question (pykoi.application.RankingTableUpdate attribute)</a>
+</li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.qa_database.QuestionAnswerDatabase">QuestionAnswerDatabase (class in pykoi.chat.db.qa_database)</a>
 </li>
     </ul></td>
@@ -803,12 +978,20 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.component.html#pykoi.component.base.RAG">RAG (class in pykoi.component.base)</a>
 </li>
+        <li><a href="pykoi.interactives.html#pykoi.interactives.barchart.Barchart.randomize_hash_id">randomize_hash_id() (pykoi.interactives.barchart.Barchart method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.ModelAnswer.rank">rank (pykoi.application.ModelAnswer attribute)</a>
+</li>
         <li><a href="pykoi.component.html#pykoi.component.constants.FeedbackType.RANK">RANK (pykoi.component.constants.FeedbackType attribute)</a>
 </li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.ranking_database.RankingDatabase">RankingDatabase (class in pykoi.chat.db.ranking_database)</a>
 </li>
+        <li><a href="pykoi.html#pykoi.application.RankingTableUpdate">RankingTableUpdate (class in pykoi.application)</a>
+</li>
         <li><a href="pykoi.telemetry.html#id4">release (pykoi.telemetry.events.AppStartEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent.release">[1]</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.retrieve_all">retrieve_all() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
         <ul>
@@ -817,8 +1000,6 @@
           <li><a href="pykoi.chat.db.html#pykoi.chat.db.comparator_database.ComparatorQuestionDatabase.retrieve_all">(pykoi.chat.db.comparator_database.ComparatorQuestionDatabase method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.qa_database.QuestionAnswerDatabase.retrieve_all_question_answers">retrieve_all_question_answers() (pykoi.chat.db.qa_database.QuestionAnswerDatabase method)</a>
 
         <ul>
@@ -831,6 +1012,8 @@
           <li><a href="pykoi.chat.db.html#pykoi.chat.db.ranking_database.RankingDatabase.retrieve_all_question_answers_as_pandas">(pykoi.chat.db.ranking_database.RankingDatabase method)</a>
 </li>
         </ul></li>
+        <li><a href="pykoi.html#pykoi.application.Application.run">run() (pykoi.application.Application method)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -852,10 +1035,16 @@
 </li>
           <li><a href="tests.chat.llm.html#tests.chat.llm.test_huggingface.TestHuggingfaceModel.setUp">(tests.chat.llm.test_huggingface.TestHuggingfaceModel method)</a>
 </li>
+          <li><a href="tests.html#tests.test_application.TestApplication.setUp">(tests.test_application.TestApplication method)</a>
+</li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.telemetry.html#id5">start_time (pykoi.telemetry.events.AppStartEvent attribute)</a>, <a href="pykoi.telemetry.html#pykoi.telemetry.events.AppStartEvent.start_time">[1]</a>
+</li>
+        <li><a href="pykoi.html#pykoi.state.State">State (class in pykoi.state)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.state.Store">Store (class in pykoi.state)</a>
 </li>
         <li><a href="pykoi.component.html#pykoi.component.base.Component.svelte_component">svelte_component (pykoi.component.base.Component attribute)</a>
 </li>
@@ -875,7 +1064,13 @@
           <li><a href="tests.chat.db.html#tests.chat.db.test_ranking_database.TestRankingDatabase.tearDown">(tests.chat.db.test_ranking_database.TestRankingDatabase method)</a>
 </li>
         </ul></li>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry">Telemetry (class in pykoi.telemetry.telemetry)</a>
+</li>
         <li><a href="pykoi.telemetry.html#pykoi.telemetry.events.TelemetryEvent">TelemetryEvent (class in pykoi.telemetry.events)</a>
+</li>
+        <li><a href="tests.html#tests.test_application.TestApplication.test_add_component">test_add_component() (tests.test_application.TestApplication method)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestState.test_call_method">test_call_method() (tests.test_state.TestState method)</a>
 </li>
         <li><a href="tests.chat.db.html#tests.chat.db.test_qa_database.TestQuestionAnswerDatabase.test_create_table">test_create_table() (tests.chat.db.test_qa_database.TestQuestionAnswerDatabase method)</a>
 
@@ -883,11 +1078,21 @@
           <li><a href="tests.chat.db.html#tests.chat.db.test_ranking_database.TestRankingDatabase.test_create_table">(tests.chat.db.test_ranking_database.TestRankingDatabase method)</a>
 </li>
         </ul></li>
+        <li><a href="tests.html#tests.test_state.TestStore.test_decrement">test_decrement() (tests.test_state.TestStore method)</a>
+</li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_abs_llm.TestAbsLlm.test_docstring">test_docstring() (tests.chat.llm.test_abs_llm.TestAbsLlm method)</a>
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_constants.TestLlmName.test_enum_attributes">test_enum_attributes() (tests.chat.llm.test_constants.TestLlmName method)</a>
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_constants.TestLlmName.test_enum_values">test_enum_values() (tests.chat.llm.test_constants.TestLlmName method)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestState.test_get_attribute">test_get_attribute() (tests.test_state.TestState method)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestState.test_get_non_existing_attribute">test_get_non_existing_attribute() (tests.test_state.TestState method)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestStore.test_hello">test_hello() (tests.test_state.TestStore method)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestStore.test_increment">test_increment() (tests.test_state.TestStore method)</a>
 </li>
         <li><a href="tests.component.html#id0">test_init() (tests.component.test_base.TestComponent method)</a>, <a href="tests.component.html#tests.component.test_base.TestComponent.test_init">[1]</a>
 
@@ -915,9 +1120,13 @@
           <li><a href="tests.chat.db.html#tests.chat.db.test_ranking_database.TestRankingDatabase.test_save_to_csv">(tests.chat.db.test_ranking_database.TestRankingDatabase method)</a>
 </li>
         </ul></li>
+        <li><a href="tests.html#tests.test_state.TestState.test_set_attribute">test_set_attribute() (tests.test_state.TestState method)</a>
+</li>
         <li><a href="tests.chat.db.html#tests.chat.db.test_qa_database.TestQuestionAnswerDatabase.test_update_vote_status">test_update_vote_status() (tests.chat.db.test_qa_database.TestQuestionAnswerDatabase method)</a>
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_abs_llm.TestAbsLlm">TestAbsLlm (class in tests.chat.llm.test_abs_llm)</a>
+</li>
+        <li><a href="tests.html#tests.test_application.TestApplication">TestApplication (class in tests.test_application)</a>
 </li>
         <li><a href="tests.component.html#tests.component.test_base.TestComponent">TestComponent (class in tests.component.test_base)</a>
 </li>
@@ -925,12 +1134,12 @@
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_huggingface.TestHuggingfaceModel">TestHuggingfaceModel (class in tests.chat.llm.test_huggingface)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_constants.TestLlmName">TestLlmName (class in tests.chat.llm.test_constants)</a>
 </li>
         <li><a href="tests.chat.llm.html#tests.chat.llm.test_openai.TestOpenAIModel">TestOpenAIModel (class in tests.chat.llm.test_openai)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="tests.chat.db.html#tests.chat.db.test_qa_database.TestQuestionAnswerDatabase">TestQuestionAnswerDatabase (class in tests.chat.db.test_qa_database)</a>
 </li>
         <li><a href="tests.chat.db.html#tests.chat.db.test_ranking_database.TestRankingDatabase">TestRankingDatabase (class in tests.chat.db.test_ranking_database)</a>
@@ -1019,6 +1228,24 @@
           <li><a href="tests.component.html#module-tests.component.test_base">module</a>
 </li>
         </ul></li>
+        <li>
+    tests.test_application
+
+        <ul>
+          <li><a href="tests.html#module-tests.test_application">module</a>
+</li>
+        </ul></li>
+        <li>
+    tests.test_state
+
+        <ul>
+          <li><a href="tests.html#module-tests.test_state">module</a>
+</li>
+        </ul></li>
+        <li><a href="tests.html#tests.test_state.TestState">TestState (class in tests.test_state)</a>
+</li>
+        <li><a href="tests.html#tests.test_state.TestStore">TestStore (class in tests.test_state)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -1027,6 +1254,8 @@
   <h2>U</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pykoi.html#pykoi.application.RankingTableUpdate.up_ranking_answer">up_ranking_answer (pykoi.application.RankingTableUpdate attribute)</a>
+</li>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.abs_database.AbsDatabase.update">update() (pykoi.chat.db.abs_database.AbsDatabase method)</a>
 
         <ul>
@@ -1038,6 +1267,12 @@
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.chat.db.html#pykoi.chat.db.qa_database.QuestionAnswerDatabase.update_vote_status">update_vote_status() (pykoi.chat.db.qa_database.QuestionAnswerDatabase method)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.UpdateQATable">UpdateQATable (class in pykoi.application)</a>
+</li>
+        <li><a href="pykoi.telemetry.html#pykoi.telemetry.telemetry.Telemetry.user_id">user_id (pykoi.telemetry.telemetry.Telemetry property)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.UserInDB">UserInDB (class in pykoi.application)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1052,6 +1287,8 @@
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="pykoi.component.html#pykoi.component.constants.FeedbackType.VOTE">VOTE (pykoi.component.constants.FeedbackType attribute)</a>
+</li>
+        <li><a href="pykoi.html#pykoi.application.UpdateQATable.vote_status">vote_status (pykoi.application.UpdateQATable attribute)</a>
 </li>
     </ul></td>
   </tr></table>

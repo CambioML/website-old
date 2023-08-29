@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>pykoi.telemetry package - pykoi 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4a2a2a4c" />
@@ -27,12 +27,20 @@
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
+  --color-admonition-title--note: #a2fff1;
+  --color-admonition-title-background--note: #00C9AB;
+  --background: #333;
+  --textColor: var(--color-foreground-primary);
   
       }
     }
@@ -148,6 +156,10 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logo-light-mode.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logo-dark-mode.svg" alt="Dark Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -168,6 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="rlhf.html">Reinforcement Learning with Human Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_labeling_annotation.html">Data Labeling &amp; Annotation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knowledge_retrieval.html">Finetuning &amp; Knowledge Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Vista</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
@@ -243,7 +257,7 @@
 <p>This module contains telemetry events for PyKoi.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pykoi.telemetry.events.AppStartEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.telemetry.events.</span></span><span class="sig-name descname"><span class="pre">AppStartEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloud_provider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'GCP'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Darwin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">release</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'22.2.0'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/telemetry/events.html#AppStartEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.telemetry.events.AppStartEvent" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.telemetry.events.</span></span><span class="sig-name descname"><span class="pre">AppStartEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloud_provider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Unknown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Darwin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">release</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'22.4.0'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/telemetry/events.html#AppStartEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.telemetry.events.AppStartEvent" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pykoi.telemetry.events.TelemetryEvent" title="pykoi.telemetry.events.TelemetryEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">TelemetryEvent</span></code></a></p>
 <p>A telemetry event that is triggered when the application starts.</p>
 <dl class="py attribute">
@@ -325,7 +339,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">cloud_provider</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GCP'</span></em><a class="headerlink" href="#id0" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cloud_provider</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Unknown'</span></em><a class="headerlink" href="#id0" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -345,7 +359,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">release</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'22.2.0'</span></em><a class="headerlink" href="#id4" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">release</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'22.4.0'</span></em><a class="headerlink" href="#id4" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -475,8 +489,82 @@
 </dd></dl>
 
 </section>
-<section id="pykoi-telemetry-telemetry-module">
-<h2>pykoi.telemetry.telemetry module<a class="headerlink" href="#pykoi-telemetry-telemetry-module" title="Permalink to this heading">#</a></h2>
+<section id="module-pykoi.telemetry.telemetry">
+<span id="pykoi-telemetry-telemetry-module"></span><h2>pykoi.telemetry.telemetry module<a class="headerlink" href="#module-pykoi.telemetry.telemetry" title="Permalink to this heading">#</a></h2>
+<p>This module contains telemetry for PyKoi.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykoi.telemetry.telemetry.</span></span><span class="sig-name descname"><span class="pre">Telemetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable_telemetry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pykoi/telemetry/telemetry.html#Telemetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for capturing telemetry events and sending them to Posthog.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry._user_id_path">
+<span class="sig-name descname"><span class="pre">_user_id_path</span></span><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry._user_id_path" title="Permalink to this definition">#</a></dt>
+<dd><p>The path to the file containing the user ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry._user_id">
+<span class="sig-name descname"><span class="pre">_user_id</span></span><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry._user_id" title="Permalink to this definition">#</a></dt>
+<dd><p>The user ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry._unknown">
+<span class="sig-name descname"><span class="pre">_unknown</span></span><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry._unknown" title="Permalink to this definition">#</a></dt>
+<dd><p>The default value for the user ID if it cannot be determined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry.capture">
+<span class="sig-name descname"><span class="pre">capture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pykoi.telemetry.events.TelemetryEvent" title="pykoi.telemetry.events.TelemetryEvent"><span class="pre">TelemetryEvent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pykoi.chat.llm.html#pykoi.chat.llm.abs_llm.AbsLlm.None" title="pykoi.chat.llm.abs_llm.AbsLlm.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/pykoi/telemetry/telemetry.html#Telemetry.capture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry.capture" title="Permalink to this definition">#</a></dt>
+<dd><p>Captures a telemetry event and sends it to Posthog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="#pykoi.telemetry.events.TelemetryEvent" title="pykoi.telemetry.events.TelemetryEvent"><em>TelemetryEvent</em></a>) – The telemetry event to capture.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry.context">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">context</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry.context" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the context for the telemetry events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing the context for the telemetry events.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pykoi.telemetry.telemetry.Telemetry.user_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pykoi.telemetry.telemetry.Telemetry.user_id" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the user ID for the telemetry events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The user ID for the telemetry events.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-pykoi.telemetry">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pykoi.telemetry" title="Permalink to this heading">#</a></h2>
@@ -595,7 +683,18 @@
 <li><a class="reference internal" href="#pykoi.telemetry.events.identify_cloud_provider"><code class="docutils literal notranslate"><span class="pre">identify_cloud_provider()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pykoi-telemetry-telemetry-module">pykoi.telemetry.telemetry module</a></li>
+<li><a class="reference internal" href="#module-pykoi.telemetry.telemetry">pykoi.telemetry.telemetry module</a><ul>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry"><code class="docutils literal notranslate"><span class="pre">Telemetry</span></code></a><ul>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry._user_id_path"><code class="docutils literal notranslate"><span class="pre">Telemetry._user_id_path</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry._user_id"><code class="docutils literal notranslate"><span class="pre">Telemetry._user_id</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry._unknown"><code class="docutils literal notranslate"><span class="pre">Telemetry._unknown</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry.capture"><code class="docutils literal notranslate"><span class="pre">Telemetry.capture()</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry.context"><code class="docutils literal notranslate"><span class="pre">Telemetry.context</span></code></a></li>
+<li><a class="reference internal" href="#pykoi.telemetry.telemetry.Telemetry.user_id"><code class="docutils literal notranslate"><span class="pre">Telemetry.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-pykoi.telemetry">Module contents</a></li>
 </ul>
 </li>
